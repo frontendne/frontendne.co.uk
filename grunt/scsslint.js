@@ -4,9 +4,7 @@ module.exports = {
             config: '.scss-lint.yml',
             exclude: [
                 'dev/_assets/scss/base/_reset.scss',
-                'dev/_assets/scss/base/_shame.scss',
-                'dev/_assets/scss/components/_leaflet.scss',
-                'dev/_assets/scss/global/_sprite.scss'
+                'dev/_assets/scss/base/_shame.scss'
             ]
         },
         files: [{
