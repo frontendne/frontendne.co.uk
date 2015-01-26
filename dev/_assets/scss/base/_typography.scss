@@ -1,0 +1,37 @@
+$primary-font : futura, verdana, sans-serif;
+$heading-font: $primary-font;
+$body-font: $primary-font;
+
+$line-height: $ratio#{em};
+$font-weight: 300;
+$base-font-size: 12;
+
+html {
+    direction: ltr;
+    display: block;
+    font-family: $body-font;
+    font-size: $base-font-size#{px};
+    -webkit-font-smoothing: antialiased;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    -webkit-locale: en-UK;
+    text-rendering: optimizeLegibility;
+    unicode-bidi: embed;
+}
+
+body {
+    @include breakpoint(small) {
+        font-size: 13 / $base-font-size#{em};
+        line-height: $line-height;
+    }
+
+    @include breakpoint(medium) {
+        font-size: 14 / $base-font-size#{em};
+        line-height: $line-height;
+    }
+
+    @include breakpoint(large) {
+        font-size: 15 / $base-font-size#{em};
+        line-height: $line-height;
+    }
+}

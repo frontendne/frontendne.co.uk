@@ -1,0 +1,25 @@
+// Main Colors
+$color__black: #4c5c7e;
+$color__white: #fff;
+
+$color__gray: #b9bfbb;
+$color__gray--light: #f2eadf;
+
+$color__red: #e07253;
+$color__red--dark: darken($color__red, 20%);
+$color__red--light: lighten($color__red, 20%);
+
+$color__blue: #309cc3;
+$color__blue--dark: darken($color__blue, 20%);
+$color__blue--light: lighten($color__blue, 20%);
+
+// Color Scheme
+$color__primary: $color__red;
+$color__primary--dark: darken($color__primary, 20%);
+$color__primary--light: lighten($color__primary, 20%);
+
+$color__secondary: $color__blue;
+$color__secondary--dark: darken($color__secondary, 20%);
+$color__secondary--light: lighten($color__secondary, 20%);
+
+$color__code: #333;

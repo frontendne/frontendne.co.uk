@@ -1,0 +1,26 @@
+default:
+ - 'serve'
+
+serve:
+ - 'clean:server'
+ - 'svgstore'
+ - 'recompile'
+ - 'connect'
+ - 'watch'
+
+build:
+ - 'clean:dist'
+ - 'lint'
+ - 'svgstore'
+ - 'jekyll:dist'
+ - 'sass:dist'
+ - 'autoprefixer:dist'
+ - 'htmlmin'
+
+recompile:
+ - 'jekyll:dev'
+ - 'sass:dev'
+ - 'autoprefixer:dev'
+
+lint:
+ - 'newer:scsslint'

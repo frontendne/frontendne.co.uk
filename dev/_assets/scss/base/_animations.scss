@@ -1,0 +1,25 @@
+$animation__timing : 1s;
+$animation__timing--interaction : .4s;
+
+@import 'animations/bounce-in-down';
+@import 'animations/bounce-out-up';
+@import 'animations/fade-in';
+@import 'animations/spin';
+
+%animation {
+    animation-duration: $animation__timing;
+    animation-fill-mode: both;
+}
+
+%animation--infinite {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animation {
+    @extend %animation;
+}
+
+.animation--infinite {
+    @extend %animation--infinite;
+}
