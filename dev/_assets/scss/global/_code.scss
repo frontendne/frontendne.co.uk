@@ -1,0 +1,9 @@
+code {
+    background-color: $color__gray--light;
+    border: 1px solid $color__gray;
+    color: $color__black;
+    font-family: 'consolas', 'monaco', 'courier', monospaced;
+    margin: 0 pow($ratio--inv, 3)#{em};
+    padding: 0 pow($ratio--inv, 2)#{em};
+    white-space: nowrap;
+}

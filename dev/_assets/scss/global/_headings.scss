@@ -1,0 +1,27 @@
+%hn {
+    font-family: $heading-font;
+    font-weight: 600;
+    line-height: 1em;
+    margin: 0 0 $ratio--inv#{em};
+    text-transform: capitalize;
+}
+
+h1 {
+    @extend %hn;
+
+    font-size: pow($ratio, 1)#{em};
+}
+
+h2 {
+    @extend %hn;
+
+    font-size: 1 + ($ratio--inv / 2)#{em};
+    margin-bottom: $ratio--inv#{em};
+}
+
+h3,
+h4 {
+    @extend %hn;
+
+    font-size: 1 + ($ratio--inv / 3)#{em};
+}

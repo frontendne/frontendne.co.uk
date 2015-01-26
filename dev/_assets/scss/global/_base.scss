@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $color__white;
+    color: $color__black;
+    fill: $color__black;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+%wrapper,
+.wrapper {
+    margin: 0 auto;
+    max-width: map-get($breakpoints, large);
+    padding: 0 $ratio#{em};
+    width: 100%;
+}
+
+// Doubles the specificity
+.hide.hide {
+    height: 0;
+    position: absolute;
+    top: -1000px;
+    visibility: hidden;
+    width: 0;
+    z-index: -99;
+}

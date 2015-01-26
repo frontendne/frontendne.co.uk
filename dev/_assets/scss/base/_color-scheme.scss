@@ -1,0 +1,37 @@
+// Main Colors
+$color__black: #58585a;
+$color__white: #fff;
+
+$color__gray: #c2c3c5;
+$color__gray--dark: darken($color__gray, 20%);
+$color__gray--light: lighten($color__gray, 10%);
+
+$color__pink: #b62467;
+$color__pink--dark: darken($color__pink, 20%);
+$color__pink--light: lighten($color__pink, 20%);
+
+$color__red: #e74c3c;
+$color__red--dark: darken($color__red, 20%);
+$color__red--light: lighten($color__red, 20%);
+
+$color__orange: #f7942e;
+$color__orange--dark: darken($color__orange, 20%);
+$color__orange--light: lighten($color__orange, 20%);
+
+$color__green: #32b4ab;
+$color__green--dark: darken($color__green, 20%);
+$color__green--light: lighten($color__green, 20%);
+
+// Color Scheme
+$color__primary: $color__pink;
+$color__primary--dark: darken($color__primary, 20%);
+$color__primary--light: lighten($color__primary, 20%);
+
+$color__secondary: $color__orange;
+$color__secondary--dark: darken($color__secondary, 20%);
+$color__secondary--light: lighten($color__secondary, 20%);
+
+$color__positive: $color__green;
+$color__negative: $color__red;
+
+$color__code: #333;

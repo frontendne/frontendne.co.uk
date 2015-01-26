@@ -1,0 +1,40 @@
+u,
+.text--underlined {
+    text-decoration: underline;
+}
+
+b,
+strong,
+.text--bold {
+    font-weight: bold;
+    letter-spacing: -.0225em;
+}
+
+i,
+em,
+.text--italic {
+    font-style: italic;
+}
+
+%ol {
+    list-style-type: decimal;
+    margin-bottom: $ratio#{em};
+    margin-left: $ratio#{em};
+}
+
+%ul {
+    list-style-type: disc;
+    margin-bottom: $ratio#{em};
+    margin-left: $ratio#{em};
+}
+
+p {
+    margin-bottom: $ratio--inv#{em};
+    max-width: 38em; // https://twitter.com/TrentWalton/status/431550755611213824
+    word-wrap: break-word;
+}
+
+::selection {
+    background-color: $color__primary;
+    color: $color__white;
+}

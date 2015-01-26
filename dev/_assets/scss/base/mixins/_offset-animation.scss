@@ -1,0 +1,11 @@
+@mixin offset-animation($items, $speed, $step:10ms) {
+    animation-duration: $speed;
+    @content;
+
+    @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+            animation-delay: ($i - 1) * $step;
+            animation-duration: $speed + ($i / 100);
+        }
+    }
+}
