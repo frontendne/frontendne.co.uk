@@ -1,0 +1,24 @@
+main {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: $ratio#{em};
+    width: 38em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.main__content {
+    margin: $ratio#{em} 0;
+}

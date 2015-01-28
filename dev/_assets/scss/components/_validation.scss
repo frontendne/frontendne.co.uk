@@ -1,10 +1,10 @@
 form {
     &:not(:valid) {
         [type=submit] {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(-100%);
-            transition-delay: 0 1s 1s;
+            // opacity: 0;
+            // pointer-events: none;
+            // transform: translateY(-100%);
+            background-color: $color__red;
         }
         [type=email]:focus {
             border-bottom-color: $color__red;

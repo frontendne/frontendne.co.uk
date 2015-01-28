@@ -4,13 +4,13 @@ layout: base
 
 <main role="main">
     <a href="/" class="logo">
-        <svg viewBox="0 0 585 140" class="icon icon__logo">
-            <use xlink:href="#icon__logo"></use>
-        </svg>
+        {% include svg/logo.svg %}
     </a>
-    {{ content }}
+    <div class="main__content">
+        {{ content }}
+    </div>
     <form action="#" class="newsletter">
-        <label for="newsletter__email">Email Address:</label>
+        <label for="newsletter__email" class="hide">Email Address:</label>
         <input type="email" id="newsletter__email" name="newsletter__email" placeholder="jzeldman@happycog.com" required>
         <input type="submit" value="submit">
     </form>
