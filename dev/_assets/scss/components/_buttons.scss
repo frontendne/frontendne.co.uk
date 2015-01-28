@@ -1,0 +1,28 @@
+%button {
+    background-color: $color__primary;
+    border: 0;
+    color: $color__white;
+    cursor: pointer;
+    display: inline-block;
+    fill: $color__white;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    padding: $ratio--inv#{em} $ratio#{em};
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color $animation__timing--interaction;
+    width: 100%;
+
+    &:hover,
+    &:focus{
+        background: $color__primary--light;
+        color: $color__white;
+        fill: $color__white;
+        outline: none;
+    }
+}
+
+[type=submit] {
+    @extend %button;
+}

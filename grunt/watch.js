@@ -3,7 +3,7 @@ module.exports = {
         livereload: true
     },
     styles: {
-        files: ['dev/_assets/scss/{,*/,*/*/}*.scss'],
+        files: ['dev/_assets/scss/**/*.scss'],
         tasks: [
             'sass:dev',
             'autoprefixer:dev'
@@ -21,9 +21,6 @@ module.exports = {
             'dev/{,*/}*.{html,md}',
             'dev/_includes/*.{html,scss}',
             'dev/_layouts/*.html',
-            'dev/_components/*.{html,md,markdown}',
-            'dev/templates--cms/*.html',
-            'dev/templates--control-panel/*.html',
             'dev/_plugins/*.rb',
             'dev/json/*.json'
         ],
