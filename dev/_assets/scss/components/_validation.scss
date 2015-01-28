@@ -1,0 +1,13 @@
+form {
+    &:not(:valid) {
+        [type=submit] {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-100%);
+            transition-delay: 0 1s 1s;
+        }
+        [type=email]:focus {
+            border-bottom-color: $color__red;
+        }
+    }
+}

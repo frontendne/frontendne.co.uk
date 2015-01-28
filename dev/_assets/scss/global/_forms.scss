@@ -15,9 +15,11 @@ input {
     display: block;
     margin: 0;
     padding: $ratio--inv#{em};
+    position: relative;
     transform: translateZ(0);
     transition: border $animation__timing--interaction;
     width: 100%;
+    z-index: 2;
 
     &:focus {
         outline: none;
