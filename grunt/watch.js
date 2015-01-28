@@ -9,6 +9,12 @@ module.exports = {
             'autoprefixer:dev'
         ]
     },
+    scripts: {
+        files: ['dev/_assets/scripts/**/*.js'],
+        tasks: [
+            'copy:scripts'
+        ]
+    },
     svg: {
         files: ['dev/_assets/svg/*.svg'],
         tasks: [

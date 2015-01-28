@@ -19,6 +19,7 @@ build:
 
 recompile:
  - 'jekyll:dev'
+ - 'copy:scripts'
  - 'sass:dev'
  - 'autoprefixer:dev'
 

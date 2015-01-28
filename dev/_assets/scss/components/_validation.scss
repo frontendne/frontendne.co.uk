@@ -1,12 +1,6 @@
-form {
-    &.invalid {
-        [type=submit] {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(-100%);
-        }
-        [type=email]:focus {
-            border-bottom-color: $color__red;
-        }
+.invalid {
+    ~ [type=submit] {
+        transform: translateY(-100%);
+        opacity: 0;
     }
 }
