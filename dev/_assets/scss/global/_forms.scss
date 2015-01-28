@@ -1,0 +1,30 @@
+%input {
+    -webkit-appearance: none;
+    backface-visibility: hidden;
+    background-color: $color__white;
+    border: 0;
+    border-bottom: pow($ratio--inv, 2)#{em} solid $color__gray;
+    color: $color__black;
+    display: block;
+    font-family: $primary-font;
+    font-size: 1em;
+    margin: 0;
+    padding: $ratio--inv#{em};
+    transform: translateZ(0);
+    transition: border $animation__timing--interaction;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+        border-bottom-color: $color__primary;
+    }
+
+    &.is-valid,
+    &:valid {
+        border-bottom-color: $color__secondary;
+    }
+}
+
+[type=email] {
+    @extend %input;
+}
