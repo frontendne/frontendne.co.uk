@@ -1,5 +1,5 @@
 %button {
-    background-color: $color__primary;
+    background-color: $color__black;
     border: 0;
     color: $color__white;
     cursor: pointer;
@@ -19,7 +19,7 @@
 
     &:hover,
     &:focus{
-        background: $color__primary--light;
+        background: $color__primary;
         color: $color__white;
         fill: $color__white;
         outline: none;
