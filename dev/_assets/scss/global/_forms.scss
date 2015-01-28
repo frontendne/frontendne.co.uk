@@ -1,8 +1,11 @@
 input {
+    border-radius: 0;
     -webkit-appearance: none;
     font-family: $primary-font;
     font-size: 1em;
     line-height: 1em;
+    margin: 0;
+    font-weight: 400;
 }
 
 %input {
