@@ -10,7 +10,8 @@ layout: base
     </a>
     {{ content }}
     <form action="#" class="newsletter">
-        <input type="email" required>
+        <label for="newsletter__email">Email Address:</label>
+        <input type="email" id="newsletter__email" name="newsletter__email" placeholder="jzeldman@happycog.com" required>
         <input type="submit" value="submit">
     </form>
 </main>
