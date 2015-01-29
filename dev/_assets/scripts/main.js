@@ -39,6 +39,6 @@ validation.prototype.validate = function() {
     }
 }
 
-new validation(document.getElementById('newsletter__email'), {
+new validation(document.getElementById('mce-EMAIL'), {
     pattern: /\S+@\S+\.\S+/
 })
