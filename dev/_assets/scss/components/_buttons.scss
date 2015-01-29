@@ -11,14 +11,13 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transition:
-        background-color $animation__timing--interaction,
+    transition: background-color $animation__timing--interaction,
         opacity $animation__timing--interaction * $ratio--inv,
         transform $animation__timing--interaction;
     width: 100%;
 
     &:hover,
-    &:focus{
+    &:focus {
         background: $color__primary--light;
         color: $color__white;
         fill: $color__white;
