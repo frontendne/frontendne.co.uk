@@ -24,7 +24,7 @@ module.exports = {
     },
     jekyll: {
         files: [
-            'dev/{,*/}*.{html,md}',
+            'dev/{,*/}*.{html,md,ico}',
             'dev/_includes/{,*/}*.{html,svg}',
             'dev/_layouts/*.html',
             'dev/_plugins/*.rb',
