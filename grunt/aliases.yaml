@@ -15,6 +15,7 @@ build:
  - 'jekyll:dist'
  - 'sass:dist'
  - 'autoprefixer:dist'
+ - 'uglify'
  - 'htmlmin'
 
 recompile:
