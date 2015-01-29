@@ -13,8 +13,8 @@
     text-transform: uppercase;
     transition:
         background-color $animation__timing--interaction,
-        opacity $animation__timing * $ratio--inv,
-        transform $animation__timing;
+        opacity $animation__timing--interaction * $ratio--inv,
+        transform $animation__timing--interaction;
     width: 100%;
 
     &:hover,

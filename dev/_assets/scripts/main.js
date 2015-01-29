@@ -21,7 +21,7 @@ validation.prototype.options = {
 validation.prototype._init = function() {
     var self = this;
 
-    self.el.onkeyup = function(e) {
+    self.el.oninput = function(e) {
         self.validate();
     };
 
