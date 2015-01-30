@@ -1,0 +1,9 @@
+a {
+    color: $color__blue;
+    transition: color $animation__timing--interaction;
+
+    &:hover {
+        color: $color__blue--light;
+    }
+}
+
