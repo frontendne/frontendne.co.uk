@@ -15,10 +15,12 @@ build:
  - 'jekyll:dist'
  - 'sass:dist'
  - 'autoprefixer:dist'
+ - 'uglify'
  - 'htmlmin'
 
 recompile:
  - 'jekyll:dev'
+ - 'copy:scripts'
  - 'sass:dev'
  - 'autoprefixer:dev'
 

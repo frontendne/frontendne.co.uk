@@ -4,7 +4,7 @@ $body-font: $primary-font;
 
 $line-height: $ratio#{em};
 $font-weight: 300;
-$base-font-size: 12;
+$base-font-size: 14;
 
 html {
     direction: ltr;
@@ -20,18 +20,14 @@ html {
 }
 
 body {
-    @include breakpoint(small) {
-        font-size: 13 / $base-font-size#{em};
-        line-height: $line-height;
-    }
 
     @include breakpoint(medium) {
-        font-size: 14 / $base-font-size#{em};
+        font-size: 16 / $base-font-size#{em};
         line-height: $line-height;
     }
 
     @include breakpoint(large) {
-        font-size: 15 / $base-font-size#{em};
+        font-size: 18 / $base-font-size#{em};
         line-height: $line-height;
     }
 }
