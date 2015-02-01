@@ -1,12 +1,17 @@
 %button {
+    -webkit-appearance: none;
     background-color: $color__primary;
     border: 0;
+    border-radius: 0;
     color: $color__white;
     cursor: pointer;
     display: inline-block;
     fill: $color__white;
+    font-family: $primary-font;
+    font-size: 1em;
     -webkit-font-smoothing: antialiased;
     font-weight: bolder;
+    line-height: 1em;
     padding: $ratio--inv#{em} $ratio#{em};
     text-align: center;
     text-decoration: none;

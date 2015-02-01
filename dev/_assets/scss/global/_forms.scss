@@ -1,22 +1,17 @@
-input {
-    -webkit-appearance: none;
-    border-radius: 0;
-    font-family: $primary-font;
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 1em;
-    margin: 0;
-}
-
 %input {
     -webkit-appearance: none;
     backface-visibility: hidden;
     background-color: $color__white;
     border: 0;
     border-bottom: pow($ratio--inv, 2)#{em} solid $color__gray;
+    border-radius: 0;
     color: $color__black;
     display: block;
-    margin: 0;
+    font-family: $primary-font;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0 0 $ratio--inv#{em};
     padding: $ratio--inv#{em};
     position: relative;
     transform: translateZ(0);
@@ -30,6 +25,11 @@ input {
     }
 }
 
-[type=email] {
+[type=email],
+[type=text] {
     @extend %input;
+}
+
+label {
+    display: block;
 }
