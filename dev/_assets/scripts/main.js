@@ -89,7 +89,7 @@ identities.prototype.populate = function(id) {
 new identities(document.getElementById('mailing-list__sign-up'), {
     data: [{
         'mce-NAME': 'Luke Skywalker',
-        'mce-EMAIL': 'luke@theforce.org'
+        'mce-EMAIL': 'luke@rebelalliance.org'
     },{
         'mce-NAME': 'Jake',
         'mce-EMAIL': 'the_dog@adventureti.me'
@@ -105,5 +105,26 @@ new identities(document.getElementById('mailing-list__sign-up'), {
     },{
         'mce-NAME': 'Doc Brown',
         'mce-EMAIL': 'emmet.brown@hillvalley.edu'
+    },{
+        'mce-NAME': 'Walter White',
+        'mce-EMAIL': 'heisenberg@savewalterwhite.com'
+    },{
+        'mce-NAME': 'Charlie Kelly',
+        'mce-EMAIL': 'teh_niteman@hotmale.com'
+    },{
+        'mce-NAME': 'Jeff Lebowski',
+        'mce-EMAIL': 'the-dude@gmail.com'
+    },{
+        'mce-NAME': 'Peter',
+        'mce-EMAIL': 'p.gibbins@initech.com'
+    },{
+        'mce-NAME': 'Stanley Ipkiss',
+        'mce-EMAIL': 'somebody-stop-me@yahoo.com'
+    },{
+        'mce-NAME': 'Pete Mitchell',
+        'mce-EMAIL': 'maverick@topgunacademy.gov'
+    },{
+        'mce-NAME': 'Rimmer',
+        'mce-EMAIL': 'a.rimmer@jmc.org'
     }]
 });
