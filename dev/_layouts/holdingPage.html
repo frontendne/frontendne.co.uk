@@ -9,9 +9,5 @@ layout: base
     <div class="main__content">
         {{ content }}
     </div>
-    <form action="//sambeckham.us3.list-manage.com/subscribe/post?u=9a08ccca86dad8eae63b29a88&amp;id=2524deef25" method="post" class="newsletter">
-        <label for="mce-EMAIL" class="hide">Email Address:</label>
-        <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="jzeldman@happycog.com" required>
-        <input type="submit" value="submit">
-    </form>
+        {% include mailing-list__sign-up.html %}
 </main>
