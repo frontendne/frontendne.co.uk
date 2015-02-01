@@ -88,10 +88,22 @@ identities.prototype.populate = function(id) {
 
 new identities(document.getElementById('mailing-list__sign-up'), {
     data: [{
-        'mce-NAME': 'Sam',
-        'mce-EMAIL': 'sam@beckham.io'
+        'mce-NAME': 'Luke Skywalker',
+        'mce-EMAIL': 'luke@theforce.org'
     },{
-        'mce-NAME': 'Martin',
-        'mce-EMAIL': 'martin@tempertemper.net'
-    },]
+        'mce-NAME': 'Jake',
+        'mce-EMAIL': 'the_dog@adventureti.me'
+    },{
+        'mce-NAME': 'Finn',
+        'mce-EMAIL': 'the_human@adventureti.me'
+    },{
+        'mce-NAME': 'Ron Burgundy',
+        'mce-EMAIL': 'r.burgundy@channel4.tv'
+    },{
+        'mce-NAME': 'Batman',
+        'mce-EMAIL': 'bruce@wayne.org'
+    },{
+        'mce-NAME': 'Doc Brown',
+        'mce-EMAIL': 'emmet.brown@hillvalley.edu'
+    }]
 });
