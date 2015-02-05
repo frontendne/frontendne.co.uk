@@ -1,6 +1,6 @@
 {
   "name": "frontendnortheast",
-  "description": "The website for Front-End North-East frontendne.co.uk",
+  "description": "The website for Frontend NE frontendne.co.uk",
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "^0.4.5",
