@@ -1,0 +1,30 @@
+svg {
+    height: auto;
+    max-width: 100%;
+}
+
+.icon {
+    display: inline-block;
+    height: $ratio#{em};
+    width: $ratio#{em};
+}
+
+.icon--large {
+    width: 100%;
+}
+
+.icon--fill {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.icon--inline {
+    margin-right: $ratio--inv#{em};
+    vertical-align: middle;
+
+    + span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

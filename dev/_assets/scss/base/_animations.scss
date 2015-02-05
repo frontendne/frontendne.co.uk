@@ -9,11 +9,11 @@ $animation__timing--interaction : .4s;
 %animation {
     animation-duration: $animation__timing;
     animation-fill-mode: both;
+    animation-timing-function: linear;
 }
 
 %animation--infinite {
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
 }
 
 .animation {

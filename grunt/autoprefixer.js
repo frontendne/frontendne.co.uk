@@ -5,17 +5,17 @@ module.exports = {
     dev: {
         files: [{
             expand: true,
-            cwd: '.tmp/resources/css/',
+            cwd: '.tmp/css/',
             src: '*.css',
-            dest: '.tmp/resources/css/'
+            dest: '.tmp/css/'
         }]
     },
     dist: {
         files: [{
             expand: true,
-            cwd: 'web/resources/css/',
+            cwd: 'web/css/',
             src: '*.css',
-            dest: 'web/resources/css/'
+            dest: 'web/css/'
         }]
     },
 };

@@ -1,0 +1,35 @@
+%input {
+    -webkit-appearance: none;
+    backface-visibility: hidden;
+    background-color: $color__white;
+    border: 0;
+    border-bottom: pow($ratio--inv, 2)#{em} solid $color__gray;
+    border-radius: 0;
+    color: $color__black;
+    display: block;
+    font-family: $primary-font;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1em;
+    margin: 0 0 $ratio--inv#{em};
+    padding: $ratio--inv#{em};
+    position: relative;
+    transform: translateZ(0);
+    transition: border $animation__timing--interaction;
+    width: 100%;
+    z-index: 2;
+
+    &:focus {
+        border-bottom-color: $color__primary;
+        outline: none;
+    }
+}
+
+[type=email],
+[type=text] {
+    @extend %input;
+}
+
+label {
+    display: block;
+}
