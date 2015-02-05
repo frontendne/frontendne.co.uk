@@ -3,10 +3,16 @@ module.exports = {
         livereload: true
     },
     styles: {
-        files: ['dev/_assets/scss/{,*/,*/*/}*.scss'],
+        files: ['dev/_assets/scss/**/*.scss'],
         tasks: [
             'sass:dev',
             'autoprefixer:dev'
+        ]
+    },
+    scripts: {
+        files: ['dev/_assets/scripts/**/*.js'],
+        tasks: [
+            'copy:scripts'
         ]
     },
     svg: {
@@ -18,12 +24,9 @@ module.exports = {
     },
     jekyll: {
         files: [
-            'dev/{,*/}*.{html,md}',
-            'dev/_includes/*.{html,scss}',
+            'dev/{,*/}*.{html,md,ico}',
+            'dev/_includes/{,*/}*.{html,svg}',
             'dev/_layouts/*.html',
-            'dev/_components/*.{html,md,markdown}',
-            'dev/templates--cms/*.html',
-            'dev/templates--control-panel/*.html',
             'dev/_plugins/*.rb',
             'dev/json/*.json'
         ],
