@@ -21,7 +21,7 @@ inlineSubmit.prototype.getAction = function() {
     var self = this,
         action = this.el.getAttribute('action');
 
-    return action;
+    return action.replace('subscribe/post?', 'subscribe/post-json?');
 }
 
 inlineSubmit.prototype.getFormData = function() {
@@ -43,11 +43,10 @@ inlineSubmit.prototype.getFormData = function() {
 inlineSubmit.prototype.submit = function() {
     var self = this,
         url = self.getAction(),
-        data = self.getFormData();
+        data = self.getFormData(),
+        callback = function(data){ console.log(data) };
 
-    url = 'http://postcatcher.in/catchers/54d4b6d926f935030000398c';
-
-    post(url, data);
+    post(url, data, callback);
 }
 
 module.exports = inlineSubmit;
