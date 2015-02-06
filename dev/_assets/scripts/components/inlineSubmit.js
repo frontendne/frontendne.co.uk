@@ -28,18 +28,35 @@ inlineSubmit.prototype.getAction = function() {
     return action;
 }
 
+inlineSubmit.prototype.getFormData = function() {
+    var self = this,
+        data = {},
+        i,
+        e;
+
+    for (i = 0; i < self.el.elements.length; i++) {
+        e = self.el.elements[i];
+        if (e.name.length > 0 && e.value.length > 0) {
+            data[e.name] = e.value;
+        }
+    }
+
+    return data;
+}
+
 inlineSubmit.prototype.submit = function() {
     console.log("I'm hijacking this form, motherfucka!");
 
     var self = this,
         url = self.getAction(),
+        data = self.getFormData(),
         callback = function() {
             console.log('Sent!');
         };
 
-    console.log(url);
+    console.log(url, data);
 
-    post('http://postcatcher.in/catchers/54d4b6d926f935030000398c', {name: 'Johnny Bravo', 'type': 'cartoon'}, callback);
+    post('http://postcatcher.in/catchers/54d4b6d926f935030000398c', data, callback);
 }
 
 module.exports = inlineSubmit;
