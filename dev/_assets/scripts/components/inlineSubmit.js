@@ -8,10 +8,6 @@ function inlineSubmit(el, options) {
     this._init();
 }
 
-inlineSubmit.prototype.options = {
-    pattern: /.*/
-}
-
 inlineSubmit.prototype._init = function() {
     var self = this;
 
@@ -45,18 +41,13 @@ inlineSubmit.prototype.getFormData = function() {
 }
 
 inlineSubmit.prototype.submit = function() {
-    console.log("I'm hijacking this form, motherfucka!");
-
     var self = this,
         url = self.getAction(),
-        data = self.getFormData(),
-        callback = function() {
-            console.log('Sent!');
-        };
+        data = self.getFormData();
 
-    console.log(url, data);
+    url = 'http://postcatcher.in/catchers/54d4b6d926f935030000398c';
 
-    post('http://postcatcher.in/catchers/54d4b6d926f935030000398c', data, callback);
+    post(url, data);
 }
 
 module.exports = inlineSubmit;
