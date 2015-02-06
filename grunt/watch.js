@@ -12,7 +12,7 @@ module.exports = {
     scripts: {
         files: ['dev/_assets/scripts/**/*.js'],
         tasks: [
-            'copy:scripts'
+            'browserify:dev'
         ]
     },
     svg: {
