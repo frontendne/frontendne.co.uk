@@ -40,11 +40,23 @@ inlineSubmit.prototype.getFormData = function() {
     return data;
 }
 
+inlineSubmit.prototype.handleResponse = function(data) {
+    if (data.result != "success") {
+        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+            console.log('You\'re already subscribed');
+        } else if (data.msg && data.msg.indexOf("subscribe attempts") >= 0) {
+            console.log('Too many subscribe attempts, try again later');
+        }
+    } else {
+        console.log("You need to confirm your email");
+    }
+}
+
 inlineSubmit.prototype.submit = function() {
     var self = this,
         url = self.getAction(),
         data = self.getFormData(),
-        callback = function(data){ console.log(data) };
+        callback = self.handleResponse;
 
     post(url, data, callback);
 }
