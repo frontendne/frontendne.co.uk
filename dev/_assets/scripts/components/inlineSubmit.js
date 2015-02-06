@@ -21,23 +21,25 @@ inlineSubmit.prototype._init = function() {
     };
 }
 
+inlineSubmit.prototype.getAction = function() {
+    var self = this,
+        action = this.el.getAttribute('action');
+
+    return action;
+}
+
 inlineSubmit.prototype.submit = function() {
     console.log("I'm hijacking this form, motherfucka!");
 
-    // var self = this,
-    //     isValid = self.options.pattern.test(self.el.value);
-
-    // if (isValid) {
-    //     self.el.className = 'valid'
-    // } else {
-    //     self.el.className = 'invalid';
-    // }
-
-    var url = 'http://postcatcher.in/catchers/54d4b6d926f935030000398c',
+    var self = this,
+        url = self.getAction(),
         callback = function() {
             console.log('Sent!');
-        }
-    post(url, {name: 'Johnny Bravo', 'type': 'cartoon'}, callback);
+        };
+
+    console.log(url);
+
+    post('http://postcatcher.in/catchers/54d4b6d926f935030000398c', {name: 'Johnny Bravo', 'type': 'cartoon'}, callback);
 }
 
 module.exports = inlineSubmit;
