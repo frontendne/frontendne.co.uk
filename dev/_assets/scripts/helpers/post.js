@@ -1,17 +1,27 @@
-function post(url, data, callback) {
-    var http = new XMLHttpRequest();
-    var params = "";
-    http.open("POST", url, true);
+var post = {
+    currentScript: null,
+    getJSON: function(url, data, callback) {
+      var src = url + (url.indexOf("?")+1 ? "&" : "?");
+      var head = document.getElementsByTagName("head")[0];
+      var newScript = document.createElement("script");
+      var params = [];
+      var param_name = "";
 
-    for(var key in data) {
-        var param = (params.length > 0) ? '&' : '';
-        param += encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
-        params += param;
-    }
+      window.postCallback = callback;
 
-    //Send the proper header information along with the request
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(params);
-}
+      data["c"] = "window.postCallback";
+      for(param_name in data){
+          params.push(param_name + "=" + encodeURIComponent(data[param_name]));
+      }
+      src += params.join("&");
 
-module.exports = post;
+      newScript.type = "text/javascript";
+      newScript.src = src;
+
+      if(this.currentScript) head.removeChild(currentScript);
+      head.appendChild(newScript);
+    },
+    success: null
+};
+
+module.exports = post.getJSON;
