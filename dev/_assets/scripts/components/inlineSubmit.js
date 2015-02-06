@@ -37,7 +37,7 @@ inlineSubmit.prototype.submit = function() {
         callback = function() {
             console.log('Sent!');
         }
-    post(url, {name: 'Johnny Bravo'}, callback);
+    post(url, {name: 'Johnny Bravo', 'type': 'cartoon'}, callback);
 }
 
 module.exports = inlineSubmit;
