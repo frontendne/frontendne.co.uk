@@ -14,6 +14,7 @@ build:
  - 'svgstore'
  - 'jekyll:dist'
  - 'sass:dist'
+ - 'copy:images'
  - 'autoprefixer:dist'
  - 'uglify'
  - 'htmlmin'
