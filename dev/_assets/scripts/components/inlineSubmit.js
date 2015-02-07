@@ -40,16 +40,34 @@ inlineSubmit.prototype.getFormData = function() {
     return data;
 }
 
+inlineSubmit.prototype.setLoading = function() {
+    var self = this;
+
+    console.log(self);
+
+    self.el.innerHTML = 'Sending…';
+}
+
+inlineSubmit.prototype.displayResponse = function(response) {
+    var self = this;
+
+    self.el.innerHTML = response;
+}
+
 inlineSubmit.prototype.handleResponse = function(data) {
+    var response = '';
+
     if (data.result != "success") {
         if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-            console.log('You\'re already subscribed');
+            response = 'You\'re already subscribed';
         } else if (data.msg && data.msg.indexOf("subscribe attempts") >= 0) {
-            console.log('Too many subscribe attempts, try again later');
+            response = 'Too many subscribe attempts, try again later';
         }
     } else {
-        console.log("You need to confirm your email");
+        response = "You need to confirm your email";
     }
+
+    responder.displayResponse(response);
 }
 
 inlineSubmit.prototype.submit = function() {
@@ -58,7 +76,9 @@ inlineSubmit.prototype.submit = function() {
         data = self.getFormData(),
         callback = self.handleResponse;
 
+    window.responder = this;
     post(url, data, callback);
+    self.setLoading();
 }
 
 module.exports = inlineSubmit;
