@@ -7,5 +7,11 @@ module.exports = {
             dest: '.tmp/',
             src: 'scripts/{,*/}*.js'
         }]
+    },
+    images: {
+        expand: true,
+        cwd: 'dev/_assets/img/',
+        src: '**',
+        dest: 'web/img/',
     }
 };
