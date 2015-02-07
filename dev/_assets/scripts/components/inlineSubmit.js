@@ -2,6 +2,7 @@ var extend = require ('../helpers/extend'),
     post = require ('../helpers/post');
 
 function inlineSubmit(el, options) {
+    'use strict';
     this.el = el;
     this.options = extend( {}, this.options );
     extend( this.options, options );
@@ -9,27 +10,30 @@ function inlineSubmit(el, options) {
 }
 
 inlineSubmit.prototype._init = function() {
+    'use strict';
     var self = this;
 
     self.prefix = self.el.id;
-    self.form = self.el.getElementsByClassName(self.prefix + '__form')[0],
-    self.loader = self.el.getElementsByClassName(self.prefix + '__loading')[0],
+    self.form = self.el.getElementsByClassName(self.prefix + '__form')[0];
+    self.loader = self.el.getElementsByClassName(self.prefix + '__loading')[0];
     self.responder = self.el.getElementsByClassName(self.prefix + '__response')[0];
 
     self.form.onsubmit = function(e) {
         e.preventDefault();
         self.submit();
     };
-}
+};
 
 inlineSubmit.prototype.getAction = function() {
+    'use strict';
     var self = this,
         action = self.form.getAttribute('action');
 
     return action.replace('subscribe/post?', 'subscribe/post-json?');
-}
+};
 
 inlineSubmit.prototype.getFormData = function() {
+    'use strict';
     var self = this,
         data = {},
         i,
@@ -43,45 +47,51 @@ inlineSubmit.prototype.getFormData = function() {
     }
 
     return data;
-}
+};
 
 inlineSubmit.prototype.setLoading = function() {
+    'use strict';
+    var self = this;
+
     this.el.className = self.prefix + '--loading';
-}
+};
 
 inlineSubmit.prototype.displayResponse = function(response) {
+    'use strict';
     var self = this,
         container = this.el;
 
     self.responder.innerHTML = response;
     container.className = self.prefix + '--response';
-}
+};
 
 inlineSubmit.prototype.handleResponse = function(data) {
+    'use strict';
     var response = '';
 
-    if (data.result != "success") {
-        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+    if (data.result !== 'success') {
+        if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
             response = 'You\'re already subscribed';
-        } else if (data.msg && data.msg.indexOf("subscribe attempts") >= 0) {
+        } else if (data.msg && data.msg.indexOf('subscribe attempts') >= 0) {
             response = 'Too many subscribe attempts, try again later';
         }
     } else {
-        response = "You need to confirm your email";
+        response = 'You need to confirm your email';
     }
 
-    responder.displayResponse(response);
-}
+    window.pendingForm.displayResponse(response);
+};
 
 inlineSubmit.prototype.submit = function() {
+    'use strict';
     var self = this,
         url = self.getAction(),
         data = self.getFormData(),
         callback = self.handleResponse;
 
-    window.responder = this;
+    window.pendingForm = this;
     post(url, data, callback);
     self.setLoading();
-}
+};
 
 module.exports = inlineSubmit;

@@ -1,24 +1,28 @@
 var post = {
     currentScript: null,
     getJSON: function(url, data, callback) {
-        var src = url + (url.indexOf("?")+1 ? "&" : "?"),
-            head = document.getElementsByTagName("head")[0],
-            newScript = document.createElement("script"),
+        'use strict';
+        var src = url + (url.indexOf('?')+1 ? '&' : '?'),
+            head = document.getElementsByTagName('head')[0],
+            newScript = document.createElement('script'),
             params = [],
-            param_name = "";
+            param = '';
 
         window.postCallback = callback;
 
-        data["c"] = "window.postCallback";
-        for(param_name in data){
-            params.push(param_name + "=" + encodeURIComponent(data[param_name]));
+        data.c = 'window.postCallback';
+        for(param in data){
+            params.push(param + '=' + encodeURIComponent(data[param]));
         }
-        src += params.join("&");
+        src += params.join('&');
 
-        newScript.type = "text/javascript";
+        newScript.type = 'text/javascript';
         newScript.src = src;
 
-        if(this.currentScript) head.removeChild(currentScript);
+        if(post.currentScript) {
+            head.removeChild(post.currentScript);
+        }
+
         head.appendChild(newScript);
     },
     success: null
