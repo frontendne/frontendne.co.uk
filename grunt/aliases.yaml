@@ -27,3 +27,4 @@ recompile:
 
 lint:
  - 'newer:scsslint'
+ - 'newer:jshint'
