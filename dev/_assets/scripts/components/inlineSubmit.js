@@ -11,7 +11,12 @@ function inlineSubmit(el, options) {
 inlineSubmit.prototype._init = function() {
     var self = this;
 
-    self.el.onsubmit = function(e) {
+    self.prefix = self.el.id;
+    self.form = self.el.getElementsByClassName(self.prefix + '__form')[0],
+    self.loader = self.el.getElementsByClassName(self.prefix + '__loading')[0],
+    self.responder = self.el.getElementsByClassName(self.prefix + '__response')[0];
+
+    self.form.onsubmit = function(e) {
         e.preventDefault();
         self.submit();
     };
@@ -19,7 +24,7 @@ inlineSubmit.prototype._init = function() {
 
 inlineSubmit.prototype.getAction = function() {
     var self = this,
-        action = this.el.getAttribute('action');
+        action = self.form.getAttribute('action');
 
     return action.replace('subscribe/post?', 'subscribe/post-json?');
 }
@@ -30,8 +35,8 @@ inlineSubmit.prototype.getFormData = function() {
         i,
         e;
 
-    for (i = 0; i < self.el.elements.length; i++) {
-        e = self.el.elements[i];
+    for (i = 0; i < self.form.elements.length; i++) {
+        e = self.form.elements[i];
         if (e.name.length > 0 && e.value.length > 0) {
             data[e.name] = e.value;
         }
@@ -41,17 +46,15 @@ inlineSubmit.prototype.getFormData = function() {
 }
 
 inlineSubmit.prototype.setLoading = function() {
-    var self = this;
-
-    console.log(self);
-
-    self.el.innerHTML = 'Sending…';
+    this.el.className = self.prefix + '--loading';
 }
 
 inlineSubmit.prototype.displayResponse = function(response) {
-    var self = this;
+    var self = this,
+        container = this.el;
 
-    self.el.innerHTML = response;
+    self.responder.innerHTML = response;
+    container.className = self.prefix + '--response';
 }
 
 inlineSubmit.prototype.handleResponse = function(data) {
