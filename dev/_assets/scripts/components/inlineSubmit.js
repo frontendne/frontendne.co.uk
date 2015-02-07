@@ -59,9 +59,21 @@ inlineSubmit.prototype.setLoading = function() {
 inlineSubmit.prototype.displayResponse = function(response) {
     'use strict';
     var self = this,
-        container = this.el;
+        container = this.el,
+        title = document.createElement('h2'),
+        message = document.createElement('p'),
+        button = document.createElement('a');
 
-    self.responder.innerHTML = response;
+    title.innerHTML = response.title;
+    message.innerHTML = response.message;
+    button.className = 'button';
+    button.href = 'https://twitter.com/intent/follow?screen_name=frontendne';
+    button.innerHTML = 'Follow us on Twitter';
+
+    self.responder.appendChild(title)
+    self.responder.appendChild(message)
+    self.responder.appendChild(button);
+
     container.className = self.prefix + '--response';
 };
 
@@ -71,12 +83,21 @@ inlineSubmit.prototype.handleResponse = function(data) {
 
     if (data.result !== 'success') {
         if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
-            response = 'You\'re already subscribed';
+            response = {
+                title: 'Been here before?',
+                message: 'You\'re already subscribed'
+            };
         } else if (data.msg && data.msg.indexOf('subscribe attempts') >= 0) {
-            response = 'Too many subscribe attempts, try again later';
+            response = {
+                title: 'Whoa, slow down there',
+                message: 'Too many subscribe attempts, try again later'
+            };
         }
     } else {
-        response = 'You need to confirm your email';
+        response = {
+            title: 'Success!',
+            message: 'You need to confirm your email'
+        };
     }
 
     window.pendingForm.displayResponse(response);
