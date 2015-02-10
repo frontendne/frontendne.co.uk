@@ -1,14 +1,14 @@
 [{
     "alreadySubscribed": {
-        "title": "Been here before?",
-        "Message": "You're already subscribed."
+        "title": "Forgetting something?",
+        "Message": "It looks like you've already subscribed with that email address."
     },
     "tooManyAttempts": {
         "title": "Whoa, slow down there",
-        "message": "Too many subscribe attempts, try again later."
+        "message": "You've attempted to subscribe with that email too many times. If you're having trouble, <a href=\"http://twitter.com/frontendne\">contact us on Twitter</a>."
     },
     "success": {
-        "title": "Success!",
-        "message": "You need to confirm your email."
+        "title": "Awesome!",
+        "message": "Thanks for subscribing. Check your inbox for a confirmation email."
     }
 }]
