@@ -3,8 +3,6 @@ var validation = require('./components/validation'),
     identities = require('./json/identities'),
     inlineSubmit = require('./components/inlineSubmit');
 
-console.log(identities);
-
 new validation(document.getElementById('mce-EMAIL'), {
     pattern: /\S+@\S+\.\S+/
 });
