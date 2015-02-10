@@ -1,16 +1,15 @@
-#mailing-list__sign-up {
-    position: relative;
+.mailing-list__sign-up {
     min-height: 14em;
+    position: relative;
 }
 
 %mailing-list__sign-up__element {
-    -webkit-backface-visibility:hidden;
-    transition: transform $animation--timing--interaction, opacity $animation--timing--interaction;
-    position: absolute;
-    top: 0;
     left: 0;
-    right: 0;
     opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform $animation--timing--interaction, opacity $animation--timing--interaction;
 }
 
 .mailing-list__sign-up__form {
@@ -32,13 +31,16 @@
     .mailing-list__sign-up--form & {
         transform: translateX(100%);
     }
+
     .mailing-list__sign-up--loading & {
         opacity: 1;
         transform: translateX(0);
     }
+
     .mailing-list__sign-up--response & {
         transform: translateX(-100%);
     }
+
 }
 
 .mailing-list__sign-up__response {
