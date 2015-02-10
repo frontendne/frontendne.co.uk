@@ -1,0 +1,55 @@
+[class*='mailing-list__sign-up'] {
+    min-height: 14em;
+    position: relative;
+}
+
+%mailing-list__sign-up__element {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform $animation--timing--interaction, opacity $animation--timing--interaction;
+}
+
+.mailing-list__sign-up__form {
+    @extend %mailing-list__sign-up__element;
+
+    transform: translateX(-100%);
+
+    .mailing-list__sign-up--form & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mailing-list__sign-up__loading {
+    @extend %mailing-list__sign-up__element;
+
+    text-align: center;
+
+    .mailing-list__sign-up--form & {
+        transform: translateX(100%);
+    }
+
+    .mailing-list__sign-up--loading & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .mailing-list__sign-up--response & {
+        transform: translateX(-100%);
+    }
+
+}
+
+.mailing-list__sign-up__response {
+    @extend %mailing-list__sign-up__element;
+
+    transform: translateX(100%);
+
+    .mailing-list__sign-up--response & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
