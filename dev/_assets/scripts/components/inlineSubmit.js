@@ -1,5 +1,6 @@
 var extend = require ('../helpers/extend'),
-    post = require ('../helpers/post');
+    post = require ('../helpers/post'),
+    responses = require ('../json/form_responses')[0];
 
 function inlineSubmit(el, options) {
     'use strict';
@@ -83,21 +84,12 @@ inlineSubmit.prototype.handleResponse = function(data) {
 
     if (data.result !== 'success') {
         if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
-            response = {
-                title: 'Been here before?',
-                message: 'You\'re already subscribed'
-            };
+            response = responses.alreadySubscribed;
         } else if (data.msg && data.msg.indexOf('subscribe attempts') >= 0) {
-            response = {
-                title: 'Whoa, slow down there',
-                message: 'Too many subscribe attempts, try again later'
-            };
+            response = responses.tooManyAttempts;
         }
     } else {
-        response = {
-            title: 'Success!',
-            message: 'You need to confirm your email'
-        };
+        response = responses.success;
     }
 
     window.pendingForm.displayResponse(response);
