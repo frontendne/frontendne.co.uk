@@ -1,0 +1,53 @@
+#mailing-list__sign-up {
+    position: relative;
+    min-height: 14em;
+}
+
+%mailing-list__sign-up__element {
+    -webkit-backface-visibility:hidden;
+    transition: transform $animation--timing--interaction, opacity $animation--timing--interaction;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.mailing-list__sign-up__form {
+    @extend %mailing-list__sign-up__element;
+
+    transform: translateX(-100%);
+
+    .mailing-list__sign-up--form & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mailing-list__sign-up__loading {
+    @extend %mailing-list__sign-up__element;
+
+    text-align: center;
+
+    .mailing-list__sign-up--form & {
+        transform: translateX(100%);
+    }
+    .mailing-list__sign-up--loading & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .mailing-list__sign-up--response & {
+        transform: translateX(-100%);
+    }
+}
+
+.mailing-list__sign-up__response {
+    @extend %mailing-list__sign-up__element;
+
+    transform: translateX(100%);
+
+    .mailing-list__sign-up--response & {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
