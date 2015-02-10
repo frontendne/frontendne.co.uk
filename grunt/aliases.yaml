@@ -16,14 +16,16 @@ build:
  - 'sass:dist'
  - 'copy:images'
  - 'autoprefixer:dist'
+ - 'browserify:dist'
  - 'uglify'
  - 'htmlmin'
 
 recompile:
  - 'jekyll:dev'
- - 'copy:scripts'
+ - 'browserify:dev'
  - 'sass:dev'
  - 'autoprefixer:dev'
 
 lint:
  - 'newer:scsslint'
+ - 'newer:jshint'

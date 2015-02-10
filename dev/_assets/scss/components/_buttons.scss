@@ -30,6 +30,7 @@
     }
 }
 
-[type=submit] {
+[type=submit],
+.button {
     @extend %button;
 }
