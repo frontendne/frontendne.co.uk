@@ -1,7 +1,7 @@
 [{
     "alreadySubscribed": {
         "title": "Forgetting something?",
-        "Message": "It looks like you've already subscribed with that email address."
+        "message": "It looks like you've already subscribed with that email address."
     },
     "tooManyAttempts": {
         "title": "Whoa, slow down there",
