@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+- 0.11
+notifications:
+  slack:
+    secure: TxBh07CVq7+gkubnmvLbiBTeQyTGnWWLNHBhlCHvd0EhNCn9AdIgU8gKtev0qW1kaz1xjyDErWl+MptaPOWY23aD8+gPs4eJ5Mnm4DMKnC2pOb+Pgo+diCRYPcJ1L5MqZUqWBmt7IuLmmGRycYtbqVXAqoldmMiGLlcVYmGzthA=
+branches:
+  only:
+  - master
+  - gh-pages
+env:
+  global:
+  - secure: SoK/n3ezHLbXplTA+eVNRcRkzGvlvrHSCi7QMRkpGj1L5IlqAUVFBheRdMEatSikZK9waO7l/Gt7rnwgbEbxTAMQvcjf6qXA5JxP/t9hvGppmSDbsCKr0bo3Mz3ZIjwsXunPXf3AZtub6puSbhVgLmSUG2hqwyx42eEqc6BjL/g=
+  - GH_OWNER: frontendne
+  - GH_PROJECT_NAME: frontendne.co.uk
+before_script:
+- gem update --system
+- gem install compass
+- gem install jekyll
+- gem install scss-lint
+- npm install -g grunt-cli bower
+- git config --global user.email ""
+- git config --global user.name "htmlandbacon"
+script:
+- grunt build
+after_success:
+- git submodule add -b gh-pages https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME}
+  site > /dev/null 2>&1
+- cd site
+- if git checkout gh-pages; then git checkout -b gh-pages; fi
+- git rm -r .
+- cp -R ../dist/* .
+- cp ../dist/.* .
+- git add -f .
+- git config user.email ""
+- git config user.name "Colin Oakley"
+- git commit -am "adding the yeoman build files to gh-pages [ci skip]"
+- git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages
+  > /dev/null 2>&1
