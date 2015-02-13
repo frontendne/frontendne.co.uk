@@ -1,5 +1,5 @@
 ---
-layout: holdingPage
+layout: landingPage
 ---
 
 Frontend NE is a free, monthly meet up about frontend development, based in Newcastle.
