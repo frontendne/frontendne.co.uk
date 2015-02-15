@@ -1,14 +1,26 @@
 [{
     "alreadySubscribed": {
         "title": "Forgetting something?",
-        "message": "It looks like you've already subscribed with that email address."
+        "message": "It looks like you've already subscribed with that email address.",
+        "button" :{
+            "href": "https://twitter.com/intent/follow?screen_name=frontendne",
+            "message": "Follow us on Twitter"
+        }
     },
     "tooManyAttempts": {
         "title": "Whoa, slow down there",
-        "message": "You've attempted to subscribe with that email too many times. If you're having trouble, <a href=\"http://twitter.com/frontendne\">contact us on Twitter</a>."
+        "message": "You've attempted to subscribe with that email too many times. Please wait a tick, then ty again.",
+        "button" :{
+            "href": "https://twitter.com/intent/tweet?screen_name=frontendne",
+            "message": "Contact us on Twitter"
+        }
     },
     "success": {
         "title": "Awesome!",
-        "message": "Thanks for subscribing. Check your inbox for a confirmation email."
+        "message": "Thanks for subscribing. Check your inbox for a confirmation email.",
+        "button" :{
+            "href": "https://twitter.com/intent/follow?screen_name=frontendne",
+            "message": "Follow us on Twitter"
+        }
     }
 }]
