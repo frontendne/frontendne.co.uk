@@ -67,9 +67,11 @@ inlineSubmit.prototype.displayResponse = function(response) {
 
     title.innerHTML = response.title;
     message.innerHTML = response.message;
-    button.className = 'button';
-    button.href = 'https://twitter.com/intent/follow?screen_name=frontendne';
-    button.innerHTML = 'Follow us on Twitter';
+    if (response.button) {
+        button.className = 'button';
+        button.href = response.button.href;
+        button.innerHTML = response.button.message;
+    }
 
     self.responder.appendChild(title);
     self.responder.appendChild(message);
