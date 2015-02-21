@@ -19,6 +19,7 @@ build:
  - 'browserify:dist'
  - 'uglify'
  - 'htmlmin'
+ - 'sitemap'
 
 recompile:
  - 'jekyll:dev'
