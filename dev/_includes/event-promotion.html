@@ -7,8 +7,17 @@
     {% endif %}
 {% endfor %}
 
-<section class="event-promotion" datetime="2015-04-02T18:00">
-    <h1>{{ nextEvent.date | date: "%-d %B %Y" }}</h1>
+<section class="event-promotion" datetime="{{ nextEvent.date | date: "%Y-%m-%dT%T" }}">
+    {% if nextEvent.title %}
+        <h1>{{ nextEvent.title }}</h1>
+        <time>{{ nextEvent.date | date: "%-d %B %Y" }}</time>
+    {% else %}
+        <h1>{{ nextEvent.date | date: "%-d %B %Y" }}</h1>
+    {% endif %}
     <p>{{ nextEvent.content }}</p>
-    <a href="#" class="button">Call for Papers</a>
+    {% if nextEvent.tickets %}
+        <a href="#" class="button">Get tickets</a>
+    {% else %}
+        <a href="#" class="button">Call for Papers</a>
+    {% endif %}
 </section>
