@@ -1,5 +1,14 @@
+{% assign now = site.time | date: "%s" %}
+{% for event in site.events %}
+    {% assign eventDate = event.date | date: "%s" %}
+    {% if eventDate >= now %}
+        {% assign nextEvent = event %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
 <section class="event-promotion" datetime="2015-04-02T18:00">
-    <h1>2nd April 2015</h1>
-    <p>Our next meetup is the second of April and it's gunna be great.</p>
+    <h1>{{ nextEvent.date | date: "%-d %B %Y" }}</h1>
+    <p>{{ nextEvent.content }}</p>
     <a href="#" class="button">Call for Papers</a>
 </section>
