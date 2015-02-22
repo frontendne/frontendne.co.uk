@@ -1,0 +1,5 @@
+name: Frontend NE
+markdown: kramdown
+collections:
+  events:
+    output: true
