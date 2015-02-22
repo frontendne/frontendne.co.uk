@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+<main role="main">
+    <header class="main__header">
+        <div class="wrapper">
+            <a href="/" class="logo">
+                {% include svg/logo.svg %}
+            </a>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="main__content">
+            {{ content }}
+        </div>
+        {% include mailing-list__sign-up.html %}
+    </div>
+    <footer class="main__footer">
+        <div class="wrapper">
+            <!-- Footer content -->
+        </div>
+    </footer>
+</main>
