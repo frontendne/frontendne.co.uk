@@ -1,5 +1,4 @@
-main {
-    animation-delay: $animation__timing--interaction;
+%wrapper {
     display: block;
     margin: 0 auto;
     max-width: 100%;
@@ -7,19 +6,10 @@ main {
     width: 38em;
 }
 
-body {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.wrapper {
+    @extend %wrapper;
 }
 
-.logo {
-    display: block;
-    text-align: center;
+main {
     width: 100%;
-}
-
-.main__content {
-    margin: $ratio#{em} 0;
 }
