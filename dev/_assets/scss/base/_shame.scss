@@ -1,4 +1,5 @@
 // Don't leave stuff in here, it's lazy and everyone will hate you for it.
 #map {
-    height: 500px;
+    height: 512px;
+    max-height: $ratio--inv * 100#{vh}
 }
