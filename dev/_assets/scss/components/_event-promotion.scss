@@ -1,6 +1,10 @@
 .event-promotion {
-    border: 2px solid;
     margin: $ratio--inv#{em} 0;
     padding: $ratio#{em};
     text-align: center;
+
+    span {
+        display: inline-block;
+        margin-bottom: $ratio--inv#{em};
+    }
 }
