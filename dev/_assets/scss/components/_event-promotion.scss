@@ -3,8 +3,32 @@
     padding: $ratio#{em};
     text-align: center;
 
+    h1 {
+        margin-top: $ratio--inv#{em};
+    }
+
     span {
         display: inline-block;
-        margin-bottom: $ratio--inv#{em};
+    }
+}
+
+.date,
+.time,
+.location {
+    margin: 0 $ratio--inv#{em};
+}
+
+.event-promotion__buttons {
+
+    @include breakpoint(small) {
+        display: flex;
+    }
+
+    .button {
+        margin: $ratio--inv#{em} 0;
+
+        @include breakpoint(small) {
+            margin: $ratio--inv#{em};
+        }
     }
 }

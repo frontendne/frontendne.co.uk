@@ -9,6 +9,11 @@ svg {
     width: $ratio#{em};
 }
 
+.icon--small {
+    width: 1em;
+    height: 1em;
+}
+
 .icon--large {
     width: 100%;
 }

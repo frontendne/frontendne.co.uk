@@ -11,14 +11,19 @@
     <span>Our next event&hellip;</span>
     {% if nextEvent.title %}
         <h1>{{ nextEvent.title }}</h1>
-        <time>{{ nextEvent.date | date: "%-d %B %Y" }}</time>
+        <time class="date">{% include svg/date.svg %}{{ nextEvent.date | date: "%-d %B" }}</time>
+        <time class="time">{% include svg/time.svg %}{{ nextEvent.date | date: "%H:%M" }}</time>
     {% else %}
         <h1>{{ nextEvent.date | date: "%-d %B %Y" }}</h1>
     {% endif %}
+    <span class="location">{% include svg/location.svg %}Campus North</span>
     <p>{{ nextEvent.content }}</p>
-    {% if nextEvent.tickets %}
-        <a href="#" class="button">Get tickets</a>
-    {% else %}
-        <a href="#" class="button">Call for Papers</a>
-    {% endif %}
+    <div class="event-promotion__buttons">
+        {% if nextEvent.tickets %}
+                <a href="#" class="button">Get tickets</a>
+        {% else %}
+            <a href="#" class="button">Call for Papers</a>
+        {% endif %}
+        <a href="#mailing-list" class="button">Get Notified</a>
+    </div>
 </section>
