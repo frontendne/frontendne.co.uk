@@ -8,6 +8,7 @@
 {% endfor %}
 
 <section class="event-promotion" datetime="{{ nextEvent.date | date: "%Y-%m-%dT%T" }}">
+    <span>Our next event&hellip;</span>
     {% if nextEvent.title %}
         <h1>{{ nextEvent.title }}</h1>
         <time>{{ nextEvent.date | date: "%-d %B %Y" }}</time>

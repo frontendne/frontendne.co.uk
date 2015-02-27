@@ -4,14 +4,9 @@ layout: base
 
 <main role="main">
     <header class="main__header">
-        <div class="wrapper">
-            <a href="/" class="logo">
-                {% include svg/logo.svg %}
-            </a>
-        </div>
+        {% include header.html %}
     </header>
     <div class="wrapper">
-        {% include event-promotion.html %}
         {{ content }}
         {% include mailing-list__sign-up.html %}
     </div>

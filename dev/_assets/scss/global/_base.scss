@@ -17,7 +17,7 @@ body {
 %wrapper,
 .wrapper {
     margin: 0 auto;
-    max-width: map-get($breakpoints, large);
+    max-width: map-get($breakpoints, small);
     padding: 0 $ratio#{em};
     width: 100%;
 }
