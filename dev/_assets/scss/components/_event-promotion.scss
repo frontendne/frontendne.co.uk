@@ -14,7 +14,10 @@
 .date,
 .time,
 .location {
+    display: inline-block;
+    color: inherit;
     margin: 0 $ratio--inv#{em};
+    text-decoration: none;
 }
 
 .event-promotion__buttons {

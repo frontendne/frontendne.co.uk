@@ -5,6 +5,7 @@ svg {
 
 .icon {
     display: inline-block;
+    fill: currentColor;
     height: $ratio#{em};
     width: $ratio#{em};
 }
