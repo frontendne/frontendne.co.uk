@@ -1,9 +1,16 @@
 .main__header {
+    align-items: center;
     background-color: $color__black;
     color: $color__gray--light;
+    display: flex;
     margin-bottom: $ratio#{em};
+    min-height: 100 * $ratio--inv#{vh};
     padding: $ratio#{em} 0 $ratio--inv#{em};
     text-align: center;
+
+    a:not(.button) {
+        color: currentColor;
+    }
 }
 
 .logo {
