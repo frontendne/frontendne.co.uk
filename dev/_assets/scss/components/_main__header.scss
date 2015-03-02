@@ -4,7 +4,7 @@
     color: $color__gray--light;
     display: flex;
     margin-bottom: $ratio#{em};
-    min-height: 100 * $ratio--inv#{vh};
+    min-height: 50 * $ratio#{vh};
     padding: $ratio#{em} 0 $ratio--inv#{em};
     text-align: center;
 
