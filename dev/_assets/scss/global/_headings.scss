@@ -3,7 +3,8 @@
     font-weight: 600;
     line-height: 1em;
     margin: 0 0 $ratio--inv#{em};
-    text-transform: capitalize;
+    text-align: center;
+    text-transform: uppercase;
 
     p + & {
         margin-top: $ratio#{em};
