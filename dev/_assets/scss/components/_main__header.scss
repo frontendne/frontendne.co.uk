@@ -13,6 +13,11 @@
     }
 }
 
+.main__header--compact {
+    min-height: 0;
+    padding: $ratio#{em};
+}
+
 .logo {
     display: block;
     text-align: center;
