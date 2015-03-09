@@ -1,18 +1,18 @@
 ---
 layout: base
 ---
-
 <main role="main">
     <header class="main__header">
-        {% include header.html %}
+        <div class="wrapper">
+            {% include logo.html %}
+            {% include event-promotion.html %}
+        </div>
     </header>
     <div class="wrapper">
         {{ content }}
         {% include mailing-list__sign-up.html %}
     </div>
-    <aside id="map">
-
-    </aside>
+    {% include map.html %}
     <footer class="main__footer">
         <div class="wrapper">
             <!-- Footer content -->

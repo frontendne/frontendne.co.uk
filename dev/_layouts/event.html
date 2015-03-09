@@ -1,0 +1,30 @@
+---
+layout: base
+---
+
+<main role="main">
+    <header class="main__header main__header--compact">
+        <div class="wrapper">
+            {% include logo.html %}
+        </div>
+    </header>
+    <div class="wrapper">
+        <section class="event-promotion" datetime="{{ page.date | date: "%Y-%m-%dT%T" }}">
+            {% if page.title %}
+                <h1>{{ page.title }}</h1>
+                <time class="date">{% include svg/date.svg %}{{ page.date | date: "%-d %B" }}</time>
+            {% else %}
+                <h1>{{ page.date | date: "%-d %B %Y" }}</h1>
+            {% endif %}
+            <time class="time">{% include svg/time.svg %}{{ page.date | date: "%H:%M" }}</time>
+            <span class="location">{% include svg/location.svg %}{{ page.location }}</span>
+        </section>
+        {{ content }}
+    </div>
+    {% include map.html %}
+    <footer class="main__footer">
+        <div class="wrapper">
+            <!-- Footer content -->
+        </div>
+    </footer>
+</main>
