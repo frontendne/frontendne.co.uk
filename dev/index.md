@@ -9,6 +9,7 @@ With great talks from some of the best developers in the North East, and the usu
 So come along, the pizzas and beers are on us!
 
 We meet at [Campus North](http://campusnorth.co.uk/#contact) on the first Thursday of each month.
+You can follow us on [Twitter](//twitter.com/frontendne), track us on [Lanyard](//lanyrd.com/2015/frontendne/) or take a peek at [our favourite gif](/our-favourite.gif).
 
 ## Call for Speakers
 We're always on the lookout for new speakers.
