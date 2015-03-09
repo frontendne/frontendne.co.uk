@@ -17,13 +17,17 @@
     {% endif %}
     <time class="time">{% include svg/time.svg %}{{ nextEvent.date | date: "%H:%M" }}</time>
     <a href="#map" class="location">{% include svg/location.svg %}{{ nextEvent.location }}</a>
-    <p>{{ nextEvent.content }}</p>
+    <p>{{ nextEvent.content | split:'</p>' | first }}</p>
     <div class="event-promotion__buttons">
         {% if nextEvent.tickets %}
-                <a href="#" class="button">Get tickets</a>
+            <a href="#" class="button">Get tickets</a>
         {% else %}
             <a href="#" class="button">Call for Papers</a>
         {% endif %}
-        <a href="#mailing-list" class="button">Get Notified</a>
+        {% if nextEvent.title %}
+            <a href="{{ nextEvent.url }}" class="button">Event Details</a>
+        {% else %}
+            <a href="#mailing-list" class="button">Get Notified</a>
+        {% endif %}
     </div>
 </section>
