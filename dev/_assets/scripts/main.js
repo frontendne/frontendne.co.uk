@@ -1,8 +1,9 @@
 var validation = require('./components/validation'),
     randomIdentity = require('./components/randomIdentity'),
     identities = require('./json/identities'),
-    inlineSubmit = require('./components/inlineSubmit'),
-    map = require('./components/mapbox');
+    inlineSubmit = require('./components/inlineSubmit');
+
+require('./components/mapbox');
 
 new validation(document.getElementById('mce-EMAIL'), {
     pattern: /\S+@\S+\.\S+/
