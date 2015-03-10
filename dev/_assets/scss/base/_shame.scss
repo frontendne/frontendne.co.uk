@@ -1,19 +1,1 @@
 // Don't leave stuff in here, it's lazy and everyone will hate you for it.
-#map {
-    height: 512px;
-    max-height: $ratio--inv * 100#{vh}
-}
-
-.date {
-    position: relative;
-
-    &:after {
-        bottom: 0;
-        content: attr(data-day);
-        font-size: 0.5em;
-        left: 0;
-        position: absolute;
-        text-align: center;
-        width: 2em;
-    }
-}
