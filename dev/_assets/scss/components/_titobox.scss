@@ -1,0 +1,12 @@
+.tito-box {
+    background-color: $color__black;
+    color: $color__gray--light;
+    display: flex;
+    margin: $ratio#{em} 0 $ratio#{em};
+    padding: $ratio#{em} 0 $ratio--inv#{em};
+    text-align: center;
+
+    a:not(.button) {
+        color: currentColor;
+    }
+}

@@ -20,6 +20,12 @@ layout: base
             <span class="location">{% include svg/location.svg %}{{ page.location }}</span>
         </section>
         {{ content }}
+
+    </div>
+    {% if page.tickets %}
+        {% include event-sign-up.html %}
+    {% endif %}
+    <div class="wrapper">
         {% include mailing-list__sign-up.html %}
     </div>
     {% include map.html %}
