@@ -2,10 +2,9 @@
 // http://www.sitepoint.com/managing-responsive-breakpoints-sass/#with-a-configurable-mixin
 
 $breakpoints: (
-    large : 72em,
-    medium : 52em,
-    small : 38em,
-    extra-small : 18em
+    large : 52em,
+    medium : 38em,
+    small : 28em
 );
 
 $default-breakpoint: root;

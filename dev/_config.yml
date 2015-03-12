@@ -1,0 +1,6 @@
+name: Frontend NE
+url: https://frontendne.co.uk
+markdown: kramdown
+collections:
+  events:
+    output: true

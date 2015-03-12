@@ -5,8 +5,14 @@ svg {
 
 .icon {
     display: inline-block;
+    fill: currentColor;
     height: $ratio#{em};
     width: $ratio#{em};
+}
+
+.icon--small {
+    height: 1em;
+    width: 1em;
 }
 
 .icon--large {

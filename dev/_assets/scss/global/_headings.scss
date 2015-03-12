@@ -2,8 +2,9 @@
     font-family: $heading-font;
     font-weight: 600;
     line-height: 1em;
-    margin: 0 0 $ratio--inv#{em};
-    text-transform: capitalize;
+    margin: $ratio#{em} 0 $ratio--inv#{em};
+    text-align: center;
+    text-transform: uppercase;
 }
 
 h1 {

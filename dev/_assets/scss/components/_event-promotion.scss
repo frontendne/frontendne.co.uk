@@ -1,0 +1,49 @@
+.event-promotion {
+    margin: $ratio--inv#{em} 0;
+    text-align: center;
+
+    h1 {
+        margin-top: $ratio--inv#{em};
+    }
+
+    span {
+        display: inline-block;
+    }
+}
+
+.date,
+.time,
+.location {
+    display: inline-block;
+    margin: 0 $ratio--inv#{em};
+    text-decoration: none;
+}
+
+.date {
+    position: relative;
+
+    &:after {
+        bottom: 0;
+        content: attr(data-day);
+        font-size: .5em;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 2em;
+    }
+}
+
+.event-promotion__buttons {
+
+    @include breakpoint(small) {
+        display: flex;
+    }
+
+    .button {
+        margin: $ratio--inv#{em} 0;
+
+        @include breakpoint(small) {
+            margin: $ratio--inv#{em};
+        }
+    }
+}
