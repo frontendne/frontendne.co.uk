@@ -15,11 +15,10 @@ env:
   - GH_PROJECT_NAME: frontendne.co.uk
 before_script:
 - gem update --system
-- gem install compass
 - gem install jekyll
 - gem install scss-lint
 - npm install -g grunt-cli bower
-- git config --global user.email "colin@htmlandbacon"
+- git config --global user.email "colin@htmlandbacon.com"
 - git config --global user.name "htmlandbacon"
 script:
 - grunt build
@@ -32,7 +31,7 @@ after_success:
 - cp -R ../web/* .
 - cp ../web/.* .
 - git add -f .
-- git config user.email "colin@htmlandbacon"
+- git config user.email "colin@htmlandbacon.com"
 - git config user.name "htmlandbacon"
 - git commit -am "building to GP-pages"
 - git push https://${GH_OAUTH_TOKEN}@github.com/${GH_OWNER}/${GH_PROJECT_NAME} HEAD:gh-pages
