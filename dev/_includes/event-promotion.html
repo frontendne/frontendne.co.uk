@@ -1,0 +1,33 @@
+{% assign now = site.time | date: "%s" %}
+{% for event in site.events %}
+    {% assign eventDate = event.date | date: "%s" %}
+    {% if eventDate >= now %}
+        {% assign nextEvent = event %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+<section class="event-promotion" datetime="{{ nextEvent.date | date: "%Y-%m-%dT%T" }}">
+    <span>Our next event&hellip;</span>
+    {% if nextEvent.title %}
+        <h1>{{ nextEvent.title }}</h1>
+        <time class="date" data-day="{{ nextEvent.date | date:'%d' }}">{% include svg/date.svg %}{{ nextEvent.date | date: "%-d %B" }}</time>
+    {% else %}
+        <h1>{{ nextEvent.date | date: "%-d %B %Y" }}</h1>
+    {% endif %}
+    <time class="time">{% include svg/time.svg %}{{ nextEvent.date | date: "%H:%M" }}</time>
+    <a href="#map" class="location">{% include svg/location.svg %}{{ nextEvent.location }}</a>
+    <p>{{ nextEvent.content | split:'</p>' | first }}</p>
+    <div class="event-promotion__buttons">
+        {% if nextEvent.tickets %}
+            <a href="#" class="button">Get tickets</a>
+        {% else %}
+            <a href="/#call-for-speakers" class="button">Call for Speakers</a>
+        {% endif %}
+        {% if nextEvent.title %}
+            <a href="{{ nextEvent.url }}" class="button">Event Details</a>
+        {% else %}
+            <a href="#mailing-list" class="button">Get Notified</a>
+        {% endif %}
+    </div>
+</section>

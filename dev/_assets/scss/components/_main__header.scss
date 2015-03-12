@@ -1,0 +1,25 @@
+.main__header {
+    align-items: center;
+    background-color: $color__black;
+    color: $color__gray--light;
+    display: flex;
+    margin-bottom: $ratio#{em};
+    min-height: 50 * $ratio#{vh};
+    padding: $ratio#{em} 0 $ratio--inv#{em};
+    text-align: center;
+
+    a:not(.button) {
+        color: currentColor;
+    }
+}
+
+.main__header--compact {
+    min-height: 0;
+    padding: $ratio#{em};
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    width: 100%;
+}

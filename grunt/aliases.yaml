@@ -5,7 +5,7 @@ serve:
  - 'clean:server'
  - 'svgstore'
  - 'recompile'
- - 'connect'
+ - 'browserSync'
  - 'watch'
 
 build:

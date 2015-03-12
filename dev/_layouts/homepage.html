@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<main role="main">
+    <header class="main__header">
+        <div class="wrapper">
+            {% include logo.html %}
+            {% include event-promotion.html %}
+        </div>
+    </header>
+    <div class="wrapper">
+        {{ content }}
+        {% include mailing-list__sign-up.html %}
+    </div>
+    {% include map.html %}
+</main>

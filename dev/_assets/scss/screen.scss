@@ -6,18 +6,19 @@
 @import 'base/typography';
 
 @import 'global/base';
-@import 'global/code';
 @import 'global/forms';
 @import 'global/headings';
 @import 'global/icons';
-@import 'global/images';
 @import 'global/links';
 @import 'global/text';
 
-@import 'layout/main';
-
 @import 'components/buttons';
+@import 'components/event-promotion';
 @import 'components/mailing-list__sign-up';
+@import 'components/main__header';
+@import 'components/map';
+@import 'components/titobox';
+@import 'components/mapbox';
 @import 'components/validation';
 
 @import 'base/shame';
