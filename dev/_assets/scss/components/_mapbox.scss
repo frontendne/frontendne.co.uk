@@ -1,5 +1,7 @@
+// scss-lint:disable ColorVariable
 // general typography */
 .leaflet-container {
+    // scss-lint:disable ImportantRule
     background: #fff;
     // color: #404040;
     color: rgba(0, 0, 0, .75);
@@ -506,3 +508,5 @@
 .leaflet-oldie .mapbox-modal.active .mapbox-modal-content {
     display: block;
 }
+// scss-lint:enable ColorVariable
+
