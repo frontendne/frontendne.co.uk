@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://frontendne.co.uk</loc>
-    <lastmod>2015-02-21T18:04:29.551Z</lastmod>
+    <loc>https://frontendne.co.ukevents/2015-04-02.html</loc>
+    <lastmod>2015-03-12T10:47:56.333Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://frontendne.co.uk</loc>
+    <lastmod>2015-03-12T10:47:56.342Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
