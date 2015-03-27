@@ -19,7 +19,9 @@
     <a href="#map" class="location">{% include svg/location.svg %}{{ nextEvent.location }}</a>
     <p>{{ nextEvent.content | split:'</p>' | first }}</p>
     <div class="event-promotion__buttons">
-        {% if nextEvent.tickets %}
+        {% if nextEvent.soldout %}
+            <div class="sold-out">Sold out</div>
+        {% elsif nextEvent.tickets %}
             <tito-button event="frontendne/{{nextEvent.tickets}}">Get a ticket</tito-button>
         {% endif %}
         {% if nextEvent.title %}
