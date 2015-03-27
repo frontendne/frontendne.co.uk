@@ -19,7 +19,9 @@ layout: base
             <time class="time">{% include svg/time.svg %}{{ page.date | date: "%H:%M" }}</time>
             <span class="location">{% include svg/location.svg %}{{ page.location }}</span>
             {% if page.tickets %}
-                <tito-button event="frontendne/{{page.tickets}}">Get a ticket</tito-button>
+                <div class="event-promotion__buttons">
+                    <tito-button event="frontendne/{{page.tickets}}">Get a ticket</tito-button>
+                </div>
             {% endif %}
         </section>
         {{ content }}
