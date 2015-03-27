@@ -2,6 +2,7 @@
     @extend %button;
 
     background: $color__red;
+    cursor: auto;
     margin: $ratio--inv#{em} 0;
 
     &:hover,
