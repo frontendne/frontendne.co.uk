@@ -39,7 +39,7 @@
         display: flex;
     }
 
-    .button {
+    %button {
         margin: $ratio--inv#{em} 0;
 
         @include breakpoint(small) {

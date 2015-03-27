@@ -20,9 +20,7 @@
     <p>{{ nextEvent.content | split:'</p>' | first }}</p>
     <div class="event-promotion__buttons">
         {% if nextEvent.tickets %}
-            <a href="#" class="button">Get tickets</a>
-        {% else %}
-            <a href="/#call-for-speakers" class="button">Call for Speakers</a>
+            <tito-button event="frontendne/{{nextEvent.tickets}}">Get a ticket</tito-button>
         {% endif %}
         {% if nextEvent.title %}
             <a href="{{ nextEvent.url }}" class="button">Event Details</a>
