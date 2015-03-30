@@ -19,10 +19,10 @@
     <a href="#map" class="location">{% include svg/location.svg %}{{ nextEvent.location }}</a>
     <p>{{ nextEvent.content | split:'</p>' | first }}</p>
     <div class="event-promotion__buttons">
-        {% if nextEvent.tickets %}
-            <a href="#" class="button">Get tickets</a>
-        {% else %}
-            <a href="/#call-for-speakers" class="button">Call for Speakers</a>
+        {% if nextEvent.soldout %}
+            <div class="sold-out">Sold out</div>
+        {% elsif nextEvent.tickets %}
+            <tito-button event="frontendne/{{nextEvent.tickets}}">Get a ticket</tito-button>
         {% endif %}
         {% if nextEvent.title %}
             <a href="{{ nextEvent.url }}" class="button">Event Details</a>

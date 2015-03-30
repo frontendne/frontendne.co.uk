@@ -18,14 +18,20 @@ layout: base
             {% endif %}
             <time class="time">{% include svg/time.svg %}{{ page.date | date: "%H:%M" }}</time>
             <span class="location">{% include svg/location.svg %}{{ page.location }}</span>
-            {% if page.tickets %}
-                <tito-button event="frontendne/{{page.tickets}}">Get a ticket</tito-button>
+            {% if page.soldout %}
+                <div class="sold-out">Sold out</div>
+            {% else %}
+                {% if page.tickets %}
+                    <div class="event-promotion__buttons">
+                        <tito-button event="frontendne/{{page.tickets}}">Get a ticket</tito-button>
+                    </div>
+                {% endif %}
             {% endif %}
         </section>
         {{ content }}
 
     </div>
-    {% if page.tickets %}
+    {% if page.tickets and page.soldout != true %}
         {% include event-sign-up.html %}
     {% else %}
         <div class="wrapper">

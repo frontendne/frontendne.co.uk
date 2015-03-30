@@ -1,0 +1,13 @@
+.sold-out {
+    @extend %button;
+
+    background: $color__red;
+    cursor: auto;
+    margin: $ratio--inv#{em} 0;
+
+    &:hover,
+    &:focus {
+        background: $color__red;
+    }
+}
+

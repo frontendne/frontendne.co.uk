@@ -11,6 +11,19 @@
     }
 }
 
-.tito-tickets-button {
+tito-button {
     @extend %button !optional;
+
+    button {
+        background: transparent;
+        border: 0;
+        color: currentcolor;        
+        cursor: pointer;
+        font-family: $body-font;
+        font-size: 1em;
+        line-height: 1em;
+        margin: 0;
+        padding: 0;    
+        text-transform: uppercase;
+    }
 }
