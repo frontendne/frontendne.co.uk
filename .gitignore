@@ -4,4 +4,7 @@
 .grunt
 bower_components/
 node_modules/
-web/
+/web/cms/resources/
+/web/img/
+favicon.ico
+our-favourite.gif
