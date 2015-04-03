@@ -1,29 +1,16 @@
 module.exports = {
-    dev: {
-	options: {
-            style: 'expanded',
-            lineNumbers: true,
-            sourcemap: 'none'
-        },
-        files: [{
-            expand: true,
-            cwd: 'dev/_assets/scss',
-            src: '*.scss',
-            dest: '.tmp/css/',
-            ext: '.css'
-        }]
-    },
+
     dist: {
         options: {
             style: 'compressed',
             noCache: true,
-            sourcemap: 'none'
+            sourcemap: 'auto'
         },
         files: [{
             expand: true,
             cwd: 'dev/_assets/scss',
             src: '*.scss',
-            dest: 'web/css/',
+            dest: 'web/cms/addons/feathers/frontendne/css/',
             ext: '.css'
         }]
     },
