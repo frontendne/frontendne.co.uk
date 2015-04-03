@@ -8,3 +8,4 @@ node_modules/
 /web/img/
 favicon.ico
 our-favourite.gif
+/web/cms/addons/feathers/frontendne/css/*.map
