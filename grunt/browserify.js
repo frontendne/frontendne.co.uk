@@ -1,19 +1,10 @@
 module.exports = {
-    dev: {
-        files: [{
-            expand: true,
-            dot: true,
-            cwd: 'dev/_assets',
-            dest: '.tmp',
-            src: 'scripts/*.js'
-        }]
-    },
     dist: {
         files: [{
             expand: true,
             dot: true,
             cwd: 'dev/_assets',
-            dest: 'web',
+            dest: 'web/cms/addons/feathers/frontendne',
             src: 'scripts/*.js'
         }]
     }
