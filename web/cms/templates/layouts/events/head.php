@@ -21,6 +21,15 @@
         'template' =>'/meta/event_description.html',
       ]);
     ?>" />
+    <link rel="canonical" href="https://frontendne.co.uk/events/<?php
+      perch_collection('Events', [
+        'filter'   => 'slug',
+        'match'    => 'eq',
+        'value'    => perch_get('s'),
+        'count'    => 1,
+        'template' =>'/meta/event_slug.html',
+      ]);
+    ?>" />
     <?php perch_layout('events/_open_graph'); ?>
     <?php perch_layout('events/_twitter_card'); ?>
     <?php perch_layout('global/_apple_touch_icon'); ?>
