@@ -1,13 +1,12 @@
 <?php
 
   // Header
-  perch_layout('global/head', [
+  perch_layout('events/head', [
     'body-class' => 'event',
   ]);
 
   // Page content
   perch_collection('Events', [
-    'page'     => 'events/event',
     'template' => 'event.html',
     'filter'   => 'slug',
     'match'    => 'eq',
