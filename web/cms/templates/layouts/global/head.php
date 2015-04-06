@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title><?php perch_pages_title(); ?></title>
-    <?php perch_page_attributes(); ?>
+    <meta name="description" content="<?php perch_page_attribute('description'); ?>" />
     <link rel="canonical" href="<?php
       perch_page_url(array(
         'hide-extensions'    => true,
