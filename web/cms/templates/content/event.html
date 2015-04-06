@@ -1,0 +1,29 @@
+<perch:content id="date" type="date" time="true" format="F Y" label="Date" required="true" order="2" suppress="true" />
+
+<section class="event-promotion" datetime="<perch:content id="date" type="date" time="true" format="%Y-%m-%dT%T" />">
+
+    <h1><perch:content id="title" type="text" label="Title" required="true" title="true" order="1" /></h1>
+
+    <time class="date" data-day="<perch:content id="date" type="date" time="true" format="%d" />"><perch:template path="includes/svg/date.svg" /><perch:content id="date" type="date" time="true" format="%-d %B" /></time>
+
+    <time class="time"><perch:template path="includes/svg/time.svg" /><perch:content id="date" type="date" time="true" format="%H:%M" /></time>
+
+    <a href="#map" class="location"><perch:template path="includes/svg/location.svg" /><perch:content id="location" type="text" label="Location" required="true" /></a>
+
+    <perch:content id="details" type="textarea" label="Details" markdown="true" />
+
+    <div class="event-promotion__buttons">
+
+        <perch:content id="sold_out" type="checkbox" label="Sold out" value="sold-out" suppress="true" />
+
+        <perch:if exists="sold_out">
+            <div class="sold-out">Sold out</div>
+        <perch:else />
+            <tito-button event="frontendne/events/">Get a ticket</tito-button>
+        </perch:if>
+
+    </div>
+
+</section>
+
+<perch:content id="slug" type="slug" for="title" suppress="true" indelible="true" />
