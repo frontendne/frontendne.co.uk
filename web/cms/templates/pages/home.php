@@ -1,7 +1,7 @@
 <?php
 
-  // Main head
-  perch_layout('global/head', [
+  // Head and header
+  perch_layout('homepage/head', [
     'body-class' => 'home',
   ]);
 
