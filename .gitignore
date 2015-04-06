@@ -10,3 +10,4 @@ favicon.ico
 our-favourite.gif
 /web/cms/addons/feathers/frontendne/css/*.map
 /web/cms/addons/feathers/frontendne/img/
+/web/cms/config/config.php
