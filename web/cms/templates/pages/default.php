@@ -1,19 +1,10 @@
-<?php if (!defined('PERCH_RUNWAY')) include($_SERVER['DOCUMENT_ROOT'].'/cms/runtime.php'); ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-	<title><?php perch_pages_title(); ?></title>
-	<?php perch_page_attributes(); ?>
-	<?php perch_get_css(); ?>
-</head>
-<body>
-    <h1><?php perch_content('Main heading'); ?></h1>
+<?php
 
-    <?php perch_pages_navigation(array('levels'=>1)); ?>
+  // Header
+  perch_layout('global/head');
 
-    <?php perch_content('Intro'); ?>
+  // Page content
+  perch_content('Primary content');
 
-    <?php perch_get_javascript(); ?>
-</body>
-</html>
+  // Footer
+  perch_layout('global/footer');
