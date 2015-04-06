@@ -2,7 +2,7 @@
 .sass-cache
 .tmp
 .grunt
-bower_components/
+/dev/_assets/components/
 node_modules/
 /web/cms/resources/
 /web/img/
