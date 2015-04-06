@@ -48,6 +48,6 @@
 
 <main role="main">
 
-    <?php perch_layout('homepage/header'); ?>
+    <?php perch_layout('global/header'); ?>
 
     <div class="wrapper">
