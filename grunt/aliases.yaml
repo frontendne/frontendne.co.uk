@@ -2,7 +2,6 @@ default:
  - 'serve'
 
 serve:
- - 'clean:server'
  - 'svgstore'
  - 'recompile'
  - 'browserSync'
@@ -12,21 +11,27 @@ build:
  - 'clean:dist'
  - 'lint'
  - 'svgstore'
- - 'jekyll:dist'
- - 'sass:dist'
- - 'copy:images'
- - 'autoprefixer:dist'
- - 'browserify:dist'
- - 'uglify'
- - 'htmlmin'
- - 'sitemap'
+ - 'recompile'
 
 recompile:
- - 'jekyll:dev'
- - 'browserify:dev'
- - 'sass:dev'
- - 'autoprefixer:dev'
+ - 'js'
+ - 'css'
+ - 'binary'
 
 lint:
  - 'newer:scsslint'
  - 'newer:jshint'
+
+css:
+ - 'sass'
+ - 'autoprefixer'
+
+js:
+ - 'browserify'
+ - 'uglify'
+ - 'copy:js'
+
+binary:
+ - 'copy:images'
+ - 'copy:favicon'
+ - 'copy:fonts'
