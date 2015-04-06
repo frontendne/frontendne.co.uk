@@ -1,4 +1,17 @@
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !^/cms
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule .* /cms/core/runway/start.php [L]
+<ifModule mod_rewrite.c>
+
+  Options +FollowSymlinks
+  Options -Indexes
+
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_URI} !^/cms
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule .* /cms/core/runway/start.php [L]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} 200
+  RewriteRule ^ - [L]
+
+  ServerSignature Off
+
+</ifModule>
