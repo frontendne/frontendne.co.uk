@@ -10,7 +10,7 @@
       ]);
     ?>"/>
 <meta name="twitter:creator" content="@frontendne"/>
-<meta name="twitter:url" content="https://frontendne.local/events/<?php
+<meta name="twitter:url" content="https://frontendne.co.uk/events/<?php
       perch_collection('Events', [
         'filter'   => 'slug',
         'match'    => 'eq',

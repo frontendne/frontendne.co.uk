@@ -1,6 +1,6 @@
 <meta property="og:title" content="Frontend NE" />
 <meta property="og:site_name" content="Frontend NE"/>
-<meta property="og:url" content="https://frontendne.local/events/<?php
+<meta property="og:url" content="https://frontendne.co.uk/events/<?php
       perch_collection('Events', [
         'filter'   => 'slug',
         'match'    => 'eq',
