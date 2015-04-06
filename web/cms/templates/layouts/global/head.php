@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <meta name="description" content="A monthly meetup for Frontend developers in the North East of England, based in Newcastle upon Tyne." />
     <?php perch_page_attributes(); ?>
     <?php perch_layout('global/_apple_touch_icon'); ?>
 
