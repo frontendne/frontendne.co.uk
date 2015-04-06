@@ -1,0 +1,12 @@
+<perch:before><ul></perch:before>
+
+  <li>
+    <h2>
+      <a href="/events/<perch:content id="slug" type="slug" />"><perch:content id="date" type="date" format="F Y" /> &ndash; <perch:content id="title" type="text" />
+      </a>
+    </h2>
+    <perch:content id="details" type="textarea" chars="200" append="…" />
+    <a href="/events/<perch:content id="slug" type="slug" />">Event details</a>
+  </li>
+
+<perch:after></ul></perch:after>
