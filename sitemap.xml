@@ -2,19 +2,25 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://frontendne.co.uk/events/2015-04-02.html</loc>
-    <lastmod>2015-04-30T07:25:06.413Z</lastmod>
+    <lastmod>2015-05-11T15:30:22.307Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-05-07.html</loc>
-    <lastmod>2015-04-30T07:25:06.417Z</lastmod>
+    <lastmod>2015-05-11T15:30:22.311Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://frontendne.co.uk/events/2015-06-04.html</loc>
+    <lastmod>2015-05-11T15:30:22.323Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/</loc>
-    <lastmod>2015-04-30T07:25:06.425Z</lastmod>
+    <lastmod>2015-05-11T15:30:22.331Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
