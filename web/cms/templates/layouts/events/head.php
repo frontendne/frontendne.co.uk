@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Frontend NE – <?php
+    <title><?php
       perch_collection('Events', [
         'filter'   => 'slug',
         'match'    => 'eq',
@@ -11,7 +11,7 @@
         'count'    => 1,
         'template' =>'/meta/event_title.html',
       ]);
-    ?></title>
+    ?> - Frontend NE</title>
     <meta name="description" content="<?php
       perch_collection('Events', [
         'filter'   => 'slug',
