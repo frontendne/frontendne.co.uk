@@ -6,6 +6,9 @@
         </a>
 
         <?php
+
+            PerchSystem::set_vars(array('todaysDate'=>date('U')));
+
             perch_collection('Events', [
                 'template'   => 'event_next.html',
                 'sort'       => 'date',
