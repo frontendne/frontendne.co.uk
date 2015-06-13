@@ -5,6 +5,8 @@
     'body-class' => 'event',
   ]);
 
+    PerchSystem::set_vars(array('todaysDate'=>date('U')));
+
   // Page content
   perch_collection('Events', [
     'template' => 'event.html',
