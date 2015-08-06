@@ -16,7 +16,7 @@
                 'count'      => 1,
                 'filter'     => 'date',
                 'match'      => 'gte',
-                'value'      => date('Y-m-d H:i:s'),
+                'value'      => date('Y-m-d'),
             ]);
         ?>
 

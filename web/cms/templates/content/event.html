@@ -11,6 +11,18 @@
     <time class="time"><perch:template path="includes/svg/time.svg" />18:00</time>
 
     <a href="#map" class="location"><perch:template path="includes/svg/location.svg" />Campus North</a>
+    
+        <perch:content id="archived" />
+    <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
+        <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
+            <div class="event-promotion__buttons">
+                        <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
+            </div>
+         </perch:if>
+    </perch:if>
+</section>
+
+
 
     <perch:content id="introduction" type="textarea" suppress="true" label="Introduction" count="chars" chars="200" append="…" size="xs" help="Short version for home page (max 200 characters)" />
 
@@ -21,20 +33,20 @@
     <perch:content id="archived" type="checkbox" label="Archived" value="yes" suppress="true" />
 
     </div>
+</div>
 
     <perch:content id="archived" />
-
-    <perch:if id="date" match="gte" value="{todaysDate}" format="%s">
+    <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
-            <div class="event-promotion__buttons">
+        <div class="tito-box">
+                <div class="wrapper">
                         <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
+                </div>
             </div>
-            <perch:else />
-            <h2 class="button">Event not on sale</h2>
          </perch:if>
     </perch:if>
 
-</section>
+<div class="wrapper">
 
 <perch:content id="slug" type="slug" for="title" suppress="true" indelible="true" />
 
