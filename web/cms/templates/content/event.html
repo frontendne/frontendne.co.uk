@@ -25,13 +25,11 @@
 
     <perch:content id="archived" />
 
-    <perch:if id="date" match="gte" value="{todaysDate}" format="%s">
+    <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
             <div class="event-promotion__buttons">
                         <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
             </div>
-            <perch:else />
-            <h2 class="button">Event not on sale</h2>
          </perch:if>
     </perch:if>
 
