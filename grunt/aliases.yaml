@@ -8,7 +8,6 @@ serve:
  - 'watch'
 
 build:
- - 'clean:dist'
  - 'lint'
  - 'svgstore'
  - 'recompile'
