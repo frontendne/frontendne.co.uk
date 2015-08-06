@@ -33,17 +33,20 @@
     <perch:content id="archived" type="checkbox" label="Archived" value="yes" suppress="true" />
 
     </div>
+</div>
 
     <perch:content id="archived" />
     <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
-            <div class="event-promotion__buttons">
+        <div class="tito-box">
+                <div class="wrapper">
                         <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
+                </div>
             </div>
          </perch:if>
     </perch:if>
 
-</section>
+<div class="wrapper">
 
 <perch:content id="slug" type="slug" for="title" suppress="true" indelible="true" />
 
