@@ -6,7 +6,9 @@ class PerchAPI_Base extends PerchBase
 
 	public function update($data)
 	{
-	    $r = $this->db->update($this->table, $data, $this->pk, (int) $this->details[$this->pk]);
+		if ($this->modified_date_column) $data[$this->modified_date_column] = date('Y-m-d H:i:s');
+		
+	    $r = $this->db->update($this->table, $data, $this->pk, $this->details[$this->pk]);
 	    $this->details = array_merge($this->details, $data);
 
 	    $this->log_resources();

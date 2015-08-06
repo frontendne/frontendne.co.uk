@@ -517,7 +517,9 @@ class PerchContent_Pages extends PerchFactory
                 $new_folder = $this->get_unique_folder_name($dir, $file_name);
                 PerchUtil::debug('Trying to create: '.$new_folder);
 
-                if (mkdir($new_folder, 0755, true)) {
+                if (!is_dir($new_folder)) mkdir($new_folder, 0755, true);
+
+                if (is_dir($new_folder)) {
                     $new_dir_name = str_replace($dir, '', $new_folder);
                     $dir          = $new_folder;
                     $new_file     = PerchUtil::file_path($dir. '/'.PERCH_DEFAULT_DOC);
@@ -606,9 +608,9 @@ class PerchContent_Pages extends PerchFactory
                                             regionOrder,
                                             regionTemplate,
                                             regionMultiple,
+                                            regionOptions,
                                             regionSearchable,
-                                            regionEditRoles,
-                                            regionOptions
+                                            regionEditRoles                                            
                                         ) 
                                         SELECT
                                             '.$this->db->pdb($Page->id()).' AS pageID,
@@ -619,34 +621,14 @@ class PerchContent_Pages extends PerchFactory
                                             regionOrder,
                                             regionTemplate,
                                             regionMultiple,
+                                            regionOptions,
                                             regionSearchable,
-                                            regionEditRoles,
-                                            regionOptions
+                                            regionEditRoles
                                         FROM '.PERCH_DB_PREFIX.'content_regions
                                         WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
                                 
                                     $this->db->execute($sql);
-                                
-                                    // Nullify resources list in options
-                                    $sql = 'SELECT regionID, regionOptions
-                                            FROM '.PERCH_DB_PREFIX.'content_regions 
-                                            WHERE pageID='.$this->db->pdb((int)$Page->id());
-                                    $rows = $this->db->get_rows($sql);
-                                    if (PerchUtil::count($rows)) {
-                                        foreach($rows as $row) {
-                                            if (isset($row['contentOptions'])) {
-                                                $jsonOptions = PerchUtil::json_safe_decode($row['contentOptions'], true);    
-                                            }else{
-                                                $jsonOptions = array();
-                                            }
-                                            
-                                            $jsonOptions['resources'] = array();
-                                            $data = array();
-                                            $data['regionOptions'] = PerchUtil::json_safe_encode($jsonOptions);
-                                            $this->db->update(PERCH_DB_PREFIX.'content_regions', $data, 'regionID', $row['regionID']);
-                                        }
-                                    }
-                                
+                                                                                                    
                                 }
                             }
                             
@@ -688,7 +670,12 @@ class PerchContent_Pages extends PerchFactory
      */
     public function create_without_file($data)
     {
-                
+        $create_folder = false;
+        if (isset($data['create_folder'])) {
+            $create_folder = $data['create_folder'];
+            unset($data['create_folder']);    
+        }
+                        
         $link_only = false;     
         
         // is this a URL or just local file?
@@ -778,6 +765,64 @@ class PerchContent_Pages extends PerchFactory
             // Set its position in the tree
             if (is_object($Page)) {
                 $Page->update_tree_position($parentPageID);
+
+                if (PERCH_RUNWAY) {
+
+                    // Grab the template this page uses
+                    $Templates = new PerchContent_PageTemplates;
+                    $Template  = $Templates->find($Page->templateID());
+
+                    if (is_object($Template)) {
+
+                        // Add to nav groups
+                        if ($Template->templateNavGroups()!='') {
+                            $Page->update_navgroups(explode(',', $Template->templateNavGroups()));
+                        }
+                        
+                        // Copy page options?
+                        if ($Template->optionsPageID() != '0') {
+                            
+                            $CopyPage = $this->find($Template->optionsPageID());
+                            
+                            if (is_object($CopyPage)) {
+                            
+                                $sql = 'INSERT INTO '.PERCH_DB_PREFIX.'content_regions (
+                                        pageID,
+                                        regionKey,
+                                        regionPage, 
+                                        regionHTML,
+                                        regionNew,
+                                        regionOrder,
+                                        regionTemplate,
+                                        regionMultiple,
+                                        regionOptions,
+                                        regionSearchable,
+                                        regionEditRoles
+                                    ) 
+                                    SELECT
+                                        '.$this->db->pdb($Page->id()).' AS pageID,
+                                        regionKey,
+                                        '.$this->db->pdb($r).' AS regionPage,
+                                        "<!-- Undefined content -->" AS regionHTML,
+                                        rregionNew,
+                                        regionOrder,
+                                        regionTemplate,
+                                        regionMultiple,
+                                        regionOptions,
+                                        regionSearchable,
+                                        regionEditRoles
+                                    FROM '.PERCH_DB_PREFIX.'content_regions
+                                    WHERE regionPage!='.$this->db->pdb('*').' AND pageID='.$this->db->pdb((int)$CopyPage->id());
+                            
+                                $this->db->execute($sql);
+                            
+                            }
+                        }
+
+                    }
+
+                }
+
                 return $Page;
             }
             
@@ -817,6 +862,12 @@ class PerchContent_Pages extends PerchFactory
         $folder = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $folder);
         
         if (file_exists($folder)) {
+
+            // is it a folder without an index file? That would be ok.
+            if (!file_exists(PerchUtil::file_path($folder.'/'.PERCH_DEFAULT_DOC))) {
+                return $folder;
+            }
+
             $count++;
             return $this->get_unique_folder_name($dir, $folder_name, $count);
         }else{

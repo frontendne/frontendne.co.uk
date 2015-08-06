@@ -13,6 +13,8 @@ class PerchForm
 	var $allow_edits	= true;
 	var $name	 		= false;
 	var $force_clear	= false;
+
+	public $app_id = 'content';
 	
 	public $submitted_via_ajax = false;
 	
@@ -299,7 +301,7 @@ class PerchForm
 		}else{
 			$postkey	= $key;
 		}
-		
+
 		if (isset($_POST[$postkey])){
 			return $_POST[$postkey];
 		}else{

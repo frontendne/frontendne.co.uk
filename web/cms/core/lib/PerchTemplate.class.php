@@ -211,6 +211,25 @@ class PerchTemplate
 
 		if (isset($content_vars['_blocks'])) {
 			$blocks = $content_vars['_blocks'];
+
+			// scope parent
+			$Tag = new PerchXMLTag($opening_tag);
+			if (PerchUtil::bool_val($Tag->scope_parent())) {
+				$vars_for_repeater = array();
+				if (PerchUtil::count($content_vars)) {
+					foreach($content_vars as $key => $val) {
+						if ($key!=$Tag->id() && $key!='itemJSON' && $key!='_blocks') {
+							$vars_for_repeater['parent.'.$key] = $val;	
+						}
+					}
+				}
+				foreach($blocks as &$item) {
+					$item = array_merge($item, $vars_for_repeater);
+				}
+			}
+			// end scope parent
+
+
 			$out = $this->render_group($blocks, true);
 			return str_replace($exact_match, $out, $template_contents);
 		}
@@ -511,7 +530,8 @@ class PerchTemplate
 	    		if ($tag_type=='repeater') {
 	    			$Repeater = new PerchRepeater($OpeningTag->attributes);
 	    			$Repeater->set('id', $OpeningTag->id());
-	    			$Repeater->tags = $this->find_all_tags($type, $condition_contents);
+	    			//$Repeater->tags = $this->find_all_tags($type, $condition_contents);
+	    			$Repeater->tags = $this->find_all_tags_and_repeaters($type, $condition_contents);
 
 	    			$tmp['tag'] = $Repeater;
 	    		}elseif ($tag_type=='blocks'){
@@ -635,6 +655,7 @@ class PerchTemplate
 	public function process_show_all($vars, $contents)
 	{
 		if (strpos($contents, 'perch:showall')) {
+			$vars['perch_namespace'] = 'perch:'.$this->namespace;
 			$s = '/<perch:showall[^>]*>/s';
         	return preg_replace($s, PerchUtil::table_dump($vars, 'showall').'<link rel="stylesheet" href="'.PERCH_LOGINPATH.'/core/assets/css/debug.css" />', $contents);		
 		}
@@ -731,6 +752,7 @@ class PerchTemplate
 	    	    $out = '';
 	    		if ($count > 0) {
 	    			foreach($matches as $match) {
+
 	    			    $file = PERCH_TEMPLATE_PATH.DIRECTORY_SEPARATOR.$match[1];
 	    			    if (file_exists($file)) {
 	    			        $subtemplate = file_get_contents($file);
@@ -744,6 +766,8 @@ class PerchTemplate
 
 	        			    $contents = str_replace($match[0], $subtemplate, $contents);
 	        			    PerchUtil::debug('Using sub-template: '.str_replace(PERCH_PATH, '', $file), 'template');
+	    			    }else{
+	    			    	PerchUtil::debug('Requested sub-template not found: '.$file, 'template');
 	    			    }
 	    			}
 	    			$this->cache[$this->template]	= $contents;	
@@ -782,18 +806,31 @@ class PerchTemplate
                 }
             }
 	        
-	        // exists
-	        if ($tag->exists()) {
+	        // exists and not-exists
+	        if ($tag->exists() || $tag->not_exists()) {
 	        	
+	        	$exists_string = $tag->exists();
+	        	
+ 				// Not-exists - just swaps the pos and neg over.
+	        	if ($tag->not_exists()) {
+	        		$exists_string = $tag->not_exists();
+	        		// swap pos and neg
+	        		$tmp      = $positive;
+	        		$positive = $negative;
+	        		$negative = $tmp;
+	        		$tmp 	  = null;
+	        	}
+
+
 	        	// do we have spaces? Then it could be a logic string
-	        	if (strpos(trim($tag->exists()), ' ')!==false) {
+	        	if (strpos(trim($exists_string), ' ')!==false) {
 	        		$operators = array('AND', 'OR', 'XOR');
 
-	        		preg_match_all('#\b[A-Za-z0-9_]+\b#', $tag->exists(), $ids, PREG_SET_ORDER);
+	        		preg_match_all('#\b[A-Za-z0-9_]+\b#', $exists_string, $ids, PREG_SET_ORDER);
 	        		
 	        		if (PerchUtil::count($ids)) {
 
-	        			$logic_string = $tag->exists();
+	        			$logic_string = $exists_string;
 
 		        		foreach($ids as $id) {
 		        			$id = $id[0];
@@ -819,7 +856,7 @@ class PerchTemplate
 
 	        	}else{
 
-		            if (array_key_exists($tag->exists(), $content_vars) && $this->_resolve_to_value($content_vars[$tag->exists()]) != '') {
+		            if (array_key_exists($exists_string, $content_vars) && $this->_resolve_to_value($content_vars[$exists_string]) != '') {
 	    	            $template_contents  = str_replace($exact_match, $positive, $template_contents);
 	    	        }else{
 	    	            $template_contents  = str_replace($exact_match, $negative, $template_contents);
@@ -1570,7 +1607,8 @@ class PerchTemplate
     		$condition_contents = mb_substr($pair_html, $opening_tag_end_pos, 0-$close_tag_len);
 
     		// Do the business
-    		$contents = call_user_func(array($this, $callback), $type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
+   			$contents = call_user_func(array($this, $callback), $type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);	  		
+    		//$contents = $this->$callback($type, $opening_tag, $condition_contents, $pair_html, $contents, $content_vars, $index_in_group);
 
     		// escape hatch counter
     		$i++;
