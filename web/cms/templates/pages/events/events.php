@@ -10,6 +10,9 @@
       'template'   => 'event_listing.html',
       'sort'       => 'date',
       'sort-order' => 'DESC',
+                'filter'     => 'date',
+                'match'      => 'lte',
+                'value'      => date('Y-m-d'),
   ]);
 
   // Footer

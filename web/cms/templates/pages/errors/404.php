@@ -12,5 +12,7 @@
 <?php perch_content('Error description'); ?>
 <?
 
+
+
   // Main footer
   perch_layout('global/footer_no_content');

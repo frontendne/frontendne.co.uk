@@ -2,17 +2,19 @@
 <perch:content id="ticketSalesDate" type="date" time="true" format="%s" label="Ticket On Sale" required="true" order="2" suppress="true" />
 <perch:content id="titoCode" type="text" label="Tito Code (no Url)" order="3" suppress="true" />
 
-<section class="event-promotion" datetime="<perch:content id="date" type="date" time="true" format="%Y-%m-%dT%T" />">
 
-    <span>Our next event&hellip;</span>
+<section class="event-promotion" datetime="<perch:content id="date" type="date" time="true" format="%Y-%m-%d 18:00" />">
 
-    <h1><perch:content id="title" type="text" /></h1>
+      <span>Our next event&hellip;</span>
+    
+    <h1><perch:content id="title" type="text" label="Title" required="true" title="true" order="1" /></h1>
 
-    <time class="date" data-day="<perch:content id="date" type="date" format="%d" />"><perch:template path="includes/svg/date.svg" /><perch:content id="date" type="date" format="%-d %B" /></time>
+    <time class="date" data-day="<perch:content id="date" type="date" time="true" format="%d" />"><perch:template path="includes/svg/date.svg" /><perch:content id="date" type="date" time="true" format="%-d %B" /></time>
 
-    <time class="time"><perch:template path="includes/svg/time.svg" /><perch:content id="date" type="date" time="true" format="%H:%M" /></time>
+    <time class="time"><perch:template path="includes/svg/time.svg" />18:00</time>
 
-    <a href="#map" class="location"><perch:template path="includes/svg/location.svg" /><perch:content id="location" type="text" /></a>
+    <a href="#map" class="location"><perch:template path="includes/svg/location.svg" />Campus North</a>
+</section>
 
     <perch:content id="introduction" type="textarea" label="Introduction" markdown="true" help="Short version for home page" />
 
