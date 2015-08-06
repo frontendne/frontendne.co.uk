@@ -12,8 +12,7 @@
 
     <a href="#map" class="location"><perch:template path="includes/svg/location.svg" />Campus North</a>
     
-        <perch:content id="archived" />
-    <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
+    <perch:if id="date" match="gte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
             <div class="event-promotion__buttons">
                         <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
@@ -35,8 +34,7 @@
     </div>
 </div>
 
-    <perch:content id="archived" />
-    <perch:if id="date" match="lte" value="{todaysDate}" format="%s">
+    <perch:if id="date" match="gte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
         <div class="tito-box">
                 <div class="wrapper">
@@ -44,7 +42,7 @@
                 </div>
             </div>
          </perch:if>
-    </perch:if>
+   </perch:if>
 
 <div class="wrapper">
 
