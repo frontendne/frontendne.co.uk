@@ -6,7 +6,6 @@
   ]);
 
   // Page content
-  perch_content('About');
   perch_content('Call for speakers');
   perch_content('Location');
 

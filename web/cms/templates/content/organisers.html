@@ -1,0 +1,41 @@
+<perch:before>
+  <section class="organisers">
+    <h1>Meet the team</h1>
+    <ul>
+</perch:before>
+
+      <li>
+        <h2><perch:content id="name" type="text" label="Name" required="true" title="true" /></h2>
+        <perch:if exists="image">
+          <img src="<perch:content type="image" id="image" label="Image" width="300" height="300" density="2" quality="40" crop="true" bucket="organisers" />" alt="<perch:content type="text" id="name" /> of Frontend NE" />
+        </perch:if>
+        <perch:content id="bio" type="textarea" label="Bio" markdown="true" required="true" size="s" />
+
+        <ul>
+          <perch:if exists="website">
+            <li>
+              Website: <a href="<perch:content id="website" type="text" label="Website address" />"><perch:content id="website" type="text" replace="http://|,https://|" /></a>
+            </li>
+          </perch:if>
+          <perch:if exists="twitter">
+            <li>
+              Twitter: <a href="https://twitter.com/<perch:content id="twitter" type="text" label="Twitter username" replace="@|" />">@<perch:content id="twitter" type="text" replace="@|" /></a>
+            </li>
+          </perch:if>
+          <perch:if exists="github">
+            <li>
+              GitHub: <a href="https://github.com/<perch:content id="github" type="text" label="GitHub username" />"><perch:content id="github" type="text" /></a>
+            </li>
+          </perch:if>
+          <perch:if exists="codepen">
+            <li>
+              Codepen: <a href="https://codepen.io/<perch:content id="codepen" type="text" label="Codepen username" />"><perch:content id="codepen" type="text" /></a>
+            </li>
+          </perch:if>
+        </ul>
+      </li>
+
+<perch:after>
+    </ul>
+  </section>
+</perch:after>
