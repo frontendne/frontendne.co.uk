@@ -1,30 +1,30 @@
-<perch:content id="date" type="date" time="true" format="F Y" label="Date" required="true" order="2" suppress="true" />
+<perch:content id="date" type="date" format="F Y" label="Event date" required="true" order="2" suppress="true" />
 <perch:content id="ticketSalesDate" type="date" time="true" format="%s" label="Ticket On Sale" required="true" order="2" suppress="true" />
 <perch:content id="titoCode" type="text" label="Tito Code (no Url)" order="3" suppress="true" />
 
-<section class="event-promotion" datetime="<perch:content id="date" type="date" time="true" format="%Y-%m-%dT%T" />">
+<section class="event-promotion" datetime="<perch:content id="date" type="date" time="true" format="%Y-%m-%d 18:00" />">
 
     <h1><perch:content id="title" type="text" label="Title" required="true" title="true" order="1" /></h1>
 
     <time class="date" data-day="<perch:content id="date" type="date" time="true" format="%d" />"><perch:template path="includes/svg/date.svg" /><perch:content id="date" type="date" time="true" format="%-d %B" /></time>
 
-    <time class="time"><perch:template path="includes/svg/time.svg" /><perch:content id="date" type="date" time="true" format="%H:%M" /></time>
-    
-    <a href="#map" class="location"><perch:template path="includes/svg/location.svg" /><perch:content id="location" type="text" label="Location" required="true" /></a>
-    
-    <perch:content id="introduction" type="textarea" label="Introduction" markdown="true" help="Short version for home page" />
+    <time class="time"><perch:template path="includes/svg/time.svg" />18:00</time>
 
-    <perch:content id="details" type="textarea" label="Details" markdown="true" help="Keep this brief (around 200 words)" />
+    <a href="#map" class="location"><perch:template path="includes/svg/location.svg" />Campus North</a>
+
+    <perch:content id="introduction" type="textarea" suppress="true" label="Introduction" count="chars" chars="200" append="…" size="xs" help="Short version for home page (max 200 characters)" />
+
+    <perch:content id="details" type="textarea" label="Details" markdown="true" />
 
     <div class="event-promotion__buttons">
 
     <perch:content id="archived" type="checkbox" label="Archived" value="yes" suppress="true" />
 
     </div>
-    
+
     <perch:content id="archived" />
-    
-    <perch:if id="archived" match="neq" value="yes">
+
+    <perch:if id="date" match="gte" value="{todaysDate}" format="%s">
         <perch:if  id="ticketSalesDate" match="lte" value="{todaysDate}" format="%s">
             <div class="event-promotion__buttons">
                         <tito-button event="frontendne/<perch:content id="titoCode" />">Get a ticket</tito-button>
@@ -33,13 +33,13 @@
             <h2 class="button">Event not on sale</h2>
          </perch:if>
     </perch:if>
-    
+
 </section>
 
 <perch:content id="slug" type="slug" for="title" suppress="true" indelible="true" />
 
 <perch:noresults>
         <h1>404</h1>
-    <p>Sorry this event has not been found. Please return to the <a href="/events/">events</a> page.</p> 
+    <p>Sorry this event has not been found. Please return to the <a href="/events/">events</a> page.</p>
 
 </perch:noresults>
