@@ -2,49 +2,55 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://frontendne.co.uk/events/2015-04-02.html</loc>
-    <lastmod>2015-09-24T08:34:04.332Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.920Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-05-07.html</loc>
-    <lastmod>2015-09-24T08:34:04.336Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.924Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-06-04.html</loc>
-    <lastmod>2015-09-24T08:34:04.344Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.932Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-07-02.html</loc>
-    <lastmod>2015-09-24T08:34:04.348Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.936Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-08-06.html</loc>
-    <lastmod>2015-09-24T08:34:04.352Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.948Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-09-03.html</loc>
-    <lastmod>2015-09-24T08:34:04.356Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.952Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/events/2015-10-01.html</loc>
-    <lastmod>2015-09-24T08:34:04.360Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.956Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://frontendne.co.uk/events/2015-10-05.html</loc>
+    <lastmod>2015-10-05T08:30:43.964Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://frontendne.co.uk/</loc>
-    <lastmod>2015-09-24T08:34:04.364Z</lastmod>
+    <lastmod>2015-10-05T08:30:43.972Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
