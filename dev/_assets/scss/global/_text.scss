@@ -34,6 +34,11 @@ p {
     word-wrap: break-word;
 }
 
+small {
+    font-size: $ratio--inv#{em};
+    opacity: $ratio--inv;
+}
+
 ::selection {
     background-color: $color__primary;
     color: $color__white;
